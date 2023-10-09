@@ -29,6 +29,29 @@
   position: absolute;
 }
 
+.sphere:before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 30px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 10px solid #FFC700;
+  border-radius: 50px;
+}
+
+.sphere:after {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 45px;
+  width: 20px;
+  height: 20px;
+  background: #FFC700;
+  border-radius: 50px;
+}
+
 /* MAP TITAN */
 
 .mapTitan {

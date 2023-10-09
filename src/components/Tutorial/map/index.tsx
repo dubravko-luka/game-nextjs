@@ -1,6 +1,5 @@
 import React, { memo, useState } from 'react';
 import styles from './styles.module.css'
-import Sphere from '@/components/Sphere';
 import Route from './components/route';
 import _ from 'lodash';
 import Cloud from './components/cloud';
@@ -20,6 +19,7 @@ const map = [
   {
     id: 2,
     src: '/images/tutorial/god-map.png',
+    srcTransparent: '/images/tutorial/god-map-transparent.png',
     name: 'God',
     type: MAP_ENUM?.GOD,
     class: styles.mapGod
@@ -27,6 +27,7 @@ const map = [
   {
     id: 1,
     src: '/images/tutorial/titan-map.png',
+    srcTransparent: '/images/tutorial/titan-map-transparent.png',
     name: 'Titan',
     type: MAP_ENUM?.TITAN,
     class: styles.mapTitan
@@ -34,6 +35,7 @@ const map = [
   {
     id: 3,
     src: '/images/tutorial/human-map.png',
+    srcTransparent: '/images/tutorial/human-map-transparent.png',
     name: 'Human',
     type: MAP_ENUM?.HUMAN,
     class: styles.mapHuman
@@ -41,6 +43,7 @@ const map = [
   {
     id: 0,
     src: '/images/tutorial/undead-map.png',
+    srcTransparent: '/images/tutorial/undead-map-transparent.png',
     name: 'Undead',
     type: MAP_ENUM?.UNDEAD,
     class: styles.mapUndead
@@ -49,7 +52,7 @@ const map = [
 
 const Map: React.FC<Props> = () => {
 
-  const [currentMap, setCurrentMap] = useState(_.find(map, { id: 3 }));
+  const [currentMap, setCurrentMap] = useState(_.find(map, { id: 1 }));
   const [hoverIndex, setHoverIndex] = useState(-1);
 
   return (
@@ -62,9 +65,9 @@ const Map: React.FC<Props> = () => {
                 key={index}
                 className={`${styles.island} ${item.class} ${item?.id <= Number(currentMap?.id) ? styles.active : ''} ${hoverIndex === index ? styles.hover : ''}`}
               >
-                <div className={`${styles.sphere}`}>
-                  <Sphere />
-                </div>
+                {
+                  (item?.id === Number(currentMap?.id) || item?.id === Number(currentMap?.id) - 1) && <div className={`${styles.sphere}`}></div>
+                }
                 <img className={styles.imgMap} src={item?.src} alt={item?.name} />
               </div>
             ))
@@ -99,7 +102,7 @@ const Map: React.FC<Props> = () => {
                   setHoverIndex(-1)
                 }}
               >
-                <img className={styles.imgMap} src={item?.src} alt={item?.name} />
+                <img className={styles.imgMap} src={`${item?.srcTransparent}`} alt={item?.name} />
               </div>
             ))
           }
