@@ -1,0 +1,43 @@
+.cloud {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  background-size: cover;
+}
+
+@keyframes animCloud {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.cloud1 {
+  animation: animCloud 20s infinite linear;
+}
+
+.cloud2 {
+  animation: animCloud 40s infinite linear;
+}
+
+.cloud3 {
+  animation: animCloud 60s infinite linear;
+}
+
+.cloud4 {
+  animation: animCloud 80s infinite linear;
+}
+
+.cloudImg {
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
