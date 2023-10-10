@@ -1,7 +1,17 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 50px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
 .wrapper {
   width: calc(100% - 500px);
   height: 800px;
   perspective: 800px;
+  transition: all 1s linear;
 }
 
 .content {
@@ -165,4 +175,147 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+/* -------------------- */
+
+.wrapper.titan {
+  transform: scale(2);
+  transform-origin: 411px 76px;
+}
+
+.wrapperTransparent.titan {
+  transform: scale(2);
+  top: 465px;
+  left: 549px;
+}
+
+/*  */
+.wrapper.undead {
+  transform: scale(1.7);
+  transform-origin: 315px 739px;
+}
+
+.wrapperTransparent.undead {
+  transform: scale(1.7);
+  top: -97px;
+  left: 525px;
+}
+
+/*  */
+.wrapper.god {
+  transform: scale(1.7);
+  transform-origin: 1802px 75px;
+}
+
+.wrapperTransparent.god {
+  transform: scale(1.7);
+  top: 367px;
+  left: -515px;
+}
+
+/*  */
+.wrapper.human {
+  transform: scale(1.7);
+  transform-origin: 1985px 875px;
+}
+
+.wrapperTransparent.human {
+  transform: scale(1.7);
+  top: -192px;
+  left: -644px;
+}
+
+/* -------------- */
+
+.introIsland {
+  width: 500px;
+  height: 600px;
+  position: absolute;
+  left: 1097px;
+  top: 233px;
+  z-index: 2;
+  visibility: hidden;
+  transform: rotateY(90deg);
+  transition: visibility .3s linear, transform 0.5s linear;
+}
+
+.introIsland.hidden {
+  display: none;
+}
+
+.introIsland.active {
+  visibility: visible;
+  transform: rotateY(0deg);
+}
+
+.introIslandContainer {
+  width: 410px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.introIslandContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.introIslandContent .title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.introIslandContent .subTitle {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.introIslandContent .detail {
+  padding-top: 25px;
+  margin-top: 25px;
+  border-top: 1px solid #fff;
+  text-align: left;
+}
+
+.introIslandContent .detail .level {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.introIslandContent .detail .level ._level {
+  color: #FFC700;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.introIslandContent .detail .text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.introIslandContent .btnStart {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  border: 2px solid #FFC700;
+  color: #FFC700;
+  width: 250px;
+  height: 60px;
+  border-radius: 0px;
+  font-weight: bold;
+}
+
+.introIslandContent .btnStart:hover {
+  background: #FFC700;
+  color: #000;
 }
