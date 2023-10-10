@@ -189,14 +189,14 @@
 /* -------------------- */
 
 .wrapper.titan {
-  transform: scale(2);
-  transform-origin: 411px 76px;
+  transform: scale(2.5);
+  transform-origin: 511px 176px;
 }
 
 .wrapperTransparent.titan {
-  transform: scale(2);
-  top: 465px;
-  left: 549px;
+  transform: scale(2.5);
+  top: 478px;
+  left: 528px;
 }
 
 /*  */

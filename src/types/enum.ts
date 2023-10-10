@@ -1,5 +1,6 @@
 export enum SCREEN_ENUM {
   HOME = 'HOME',
+  PVP = "PVP",
   TUTORIAL = "TUTORIAL"
 }
 

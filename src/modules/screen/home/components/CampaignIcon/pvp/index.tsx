@@ -5,7 +5,7 @@ type Props = {
   //
 };
 
-const CampaignIconHome: React.FC<Props> = () => {
+const CampaignIconPVP: React.FC<Props> = () => {
 
   return (
     <>
@@ -21,4 +21,4 @@ const CampaignIconHome: React.FC<Props> = () => {
   );
 };
 
-export default memo(CampaignIconHome);
+export default memo(CampaignIconPVP);
