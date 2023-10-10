@@ -1,0 +1,47 @@
+.wrapper {
+  position: relative;
+}
+
+.wrapImg {
+  width: 300px;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes img_1_animation {
+
+  0%,
+  100% {
+    left: -294px;
+  }
+
+  20% {
+    left: -254px;
+  }
+}
+
+@keyframes img_2_animation {
+
+  0%,
+  100% {
+    left: 40px;
+  }
+
+  20% {
+    left: 0px;
+  }
+}
+
+.img_1 {
+  animation: img_1_animation 2s linear infinite;
+  transform: rotate(-10deg);
+}
+
+.img_2 {
+  animation: img_2_animation 2s linear infinite;
+  transform: rotate(10deg);
+}
+
+.img {
+  width: 100%;
+}

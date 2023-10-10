@@ -5,7 +5,9 @@ import _ from 'lodash';
 import Cloud from './components/cloud';
 import NewsBoard from './components/news-board';
 import Icon from '@/components/Icons/1'
-import { ICON_1_ENUM } from '@/types/enum';
+import { ICON_1_ENUM, SCREEN_ENUM } from '@/types/enum';
+import { useDispatch } from 'react-redux';
+import { setScreen } from '@/store/actions/screenAction';
 
 type Props = {
   //
@@ -76,7 +78,9 @@ const map: IMap[] = [
 
 const Map: React.FC<Props> = () => {
 
-  const [currentMap, setCurrentMap] = useState(_.find(map, { id: 3 }));
+  const dispath = useDispatch()
+
+  const [currentMap, setCurrentMap] = useState(_.find(map, { id: 1 }));
   const [hoverIndex, setHoverIndex] = useState(-1);
   const [isLandSelect, seIsLandSelect] = useState<IMap | any>(null);
 
@@ -93,18 +97,18 @@ const Map: React.FC<Props> = () => {
               <Icon icon={ICON_1_ENUM.EXISTS} />
             </div>
           ) : (
-            <div className={`${styles.header}`} onClick={() => seIsLandSelect(null)}>
+            <div className={`${styles.header}`} onClick={() => dispath(setScreen(SCREEN_ENUM.HOME))}>
               <Icon icon={ICON_1_ENUM.HOME} />
             </div>
           )
       }
       <div className={`${styles.wrapper} ${styles[isLandSelect?.type?.toLowerCase()]}`}>
-        <div className={`${styles.content}`}>
+        <div className={`${styles.content} ${isLandSelect ? styles.active : ''}`}>
           {
             map?.map((item, index) => (
               <div
                 key={index}
-                className={`${styles.island} ${item.class} ${item?.id <= Number(currentMap?.id) ? styles.active : ''} ${hoverIndex === index ? styles.hover : ''}`}
+                className={`${styles.island} ${item.class} ${item?.id <= Number(currentMap?.id) && isLandSelect === null ? styles.active : ''} ${isLandSelect?.id === item?.id ? styles.activeZoom : ''} ${hoverIndex === index ? styles.hover : ''}`}
               >
                 {
                   (item?.id === Number(currentMap?.id) || item?.id === Number(currentMap?.id) - 1) && <div className={`${styles.sphere}`}></div>
@@ -129,7 +133,7 @@ const Map: React.FC<Props> = () => {
         <Cloud />
       </div>
       <div className={`${styles.wrapperTransparent} ${styles[isLandSelect?.type?.toLowerCase()]}`}>
-        <div className={`${styles.content}`}>
+        <div className={`${styles.content} ${isLandSelect ? styles.active : ''}`}>
           {
             map?.map((item, index) => (
               <div

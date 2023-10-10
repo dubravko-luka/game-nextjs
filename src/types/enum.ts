@@ -3,6 +3,11 @@ export enum SCREEN_ENUM {
   TUTORIAL = "TUTORIAL"
 }
 
+export enum MODE_GAME {
+  PVP = "PVP",
+  TUTORIAL = "TUTORIAL"
+}
+
 export enum ICON_1_ENUM {
   PLAY = `[0, 0]`,
   EXISTS = `[1, 0]`,

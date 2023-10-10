@@ -17,8 +17,12 @@
 .content {
   width: 100%;
   height: 100%;
-  transform: rotateX(30deg);
   position: relative;
+  transition: all 1s linear;
+}
+
+.content.active {
+  transform: rotateX(50deg) translateY(-100px);
 }
 
 .island {
@@ -32,6 +36,11 @@
 }
 
 .island.active {
+  filter: grayscale(0%);
+}
+
+.island.activeZoom {
+  transform: scale(1.04);
   filter: grayscale(0%);
 }
 
@@ -193,36 +202,36 @@
 /*  */
 .wrapper.undead {
   transform: scale(1.7);
-  transform-origin: 315px 739px;
+  transform-origin: 315px 539px;
 }
 
 .wrapperTransparent.undead {
   transform: scale(1.7);
-  top: -97px;
+  top: 43px;
   left: 525px;
 }
 
 /*  */
 .wrapper.god {
   transform: scale(1.7);
-  transform-origin: 1802px 75px;
+  transform-origin: 1880px 75px;
 }
 
 .wrapperTransparent.god {
   transform: scale(1.7);
-  top: 367px;
-  left: -515px;
+  top: 372px;
+  left: -559px;
 }
 
 /*  */
 .wrapper.human {
   transform: scale(1.7);
-  transform-origin: 1985px 875px;
+  transform-origin: 1985px 608px;
 }
 
 .wrapperTransparent.human {
   transform: scale(1.7);
-  top: -192px;
+  top: -5px;
   left: -644px;
 }
 
@@ -232,7 +241,7 @@
   width: 500px;
   height: 600px;
   position: absolute;
-  left: 1097px;
+  left: 1250px;
   top: 233px;
   z-index: 2;
   visibility: hidden;

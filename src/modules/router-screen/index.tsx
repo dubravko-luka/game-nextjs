@@ -3,9 +3,8 @@ import { SCREEN_ENUM } from '@/types/enum';
 import _ from 'lodash';
 import React, { lazy, memo } from 'react';
 import { useSelector } from 'react-redux';
-
-const Home = lazy(() => import('@/modules/screen/home'));
-const Tutorial = lazy(() => import('@/modules/screen/tutorial'));
+import Tutorial from '@/modules/screen/tutorial'
+import Home from '@/modules/screen/home'
 
 type Props = {
   //
@@ -25,11 +24,20 @@ const screenRoutes = [
 const RouterScreen: React.FC<Props> = () => {
 
   const { screen } = useSelector((state: RootState) => state?.screen);
+  console.log('---------->', screen);
 
   return (
     <>
       {
-        _.find(screenRoutes, { screen })?.component
+        screenRoutes?.map((item, index) => {
+          if (item?.screen === screen) {
+            return (
+              <div key={index} style={{ width: '100%', height: '100%' }}>
+                {item?.component}
+              </div>
+            )
+          }
+        })
       }
     </>
   );
