@@ -3,6 +3,7 @@ import styles from './styles.module.css'
 import { ButtonMain, ButtonLeft, ButtonRight } from '@/components/Home/ButtonMain';
 import CamPaignIconPVP from './components/CampaignIcon/pvp'
 import CamPaignIconTutorial from './components/CampaignIcon/tutorial'
+import CamPaignIconRanked from './components/CampaignIcon/ranked'
 import { MODE_GAME, SCREEN_ENUM } from '@/types/enum';
 import { useDispatch } from 'react-redux';
 import { setScreen } from '@/store/actions/screenAction';
@@ -13,6 +14,12 @@ type Props = {
 };
 
 const modeGame = [
+  {
+    mode: MODE_GAME.RANKED,
+    name: "RANKED BATTLE",
+    screen: SCREEN_ENUM.RANKED,
+    component: <CamPaignIconRanked />
+  },
   {
     mode: MODE_GAME.PVP,
     name: "PvP",

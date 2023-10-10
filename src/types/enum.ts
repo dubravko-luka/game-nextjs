@@ -1,10 +1,12 @@
 export enum SCREEN_ENUM {
   HOME = 'HOME',
+  RANKED = "RANKED",
   PVP = "PVP",
   TUTORIAL = "TUTORIAL"
 }
 
 export enum MODE_GAME {
+  RANKED = "RANKED",
   PVP = "PVP",
   TUTORIAL = "TUTORIAL"
 }
