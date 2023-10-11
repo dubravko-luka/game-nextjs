@@ -52,6 +52,10 @@ const HomeScreen: React.FC<Props> = () => {
         <div className={`${styles.leftMenu}`}>
           <MenuHome />
         </div>
+
+        <div className={`${styles.rightMenu}`}>
+          <MenuHome />
+        </div>
         {/*  */}
         <div className={`${styles.campaignIcon}`}>
           {

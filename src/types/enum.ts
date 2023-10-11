@@ -32,5 +32,6 @@ export enum ICON_1_ENUM {
   DOWNLOAD = `[2, 3]`,
   MONEY = `[3, 3]`,
   //
-  WIFI = `[0, 4]`
+  WIFI = `[0, 4]`,
+  RANK = `[1, 4]`
 }
