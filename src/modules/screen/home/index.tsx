@@ -8,6 +8,8 @@ import { MODE_GAME, SCREEN_ENUM } from '@/types/enum';
 import { useDispatch } from 'react-redux';
 import { setScreen } from '@/store/actions/screenAction';
 import _ from 'lodash';
+import MenuHome from '@/components/Home/Menu/1'
+import Player from '@/components/Home/Player';
 
 type Props = {
   //
@@ -39,16 +41,17 @@ const HomeScreen: React.FC<Props> = () => {
   const [mode, setMode] = useState<number>(0)
   const dispath = useDispatch()
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setMode(MODE_GAME.PVP)
-  //   }, 2000)
-  // }, [])
-
   return (
     <>
       <div className={`${styles.wrapper}`}>
         <img className={styles.imgBackground} src="/images/home/background.jpeg" alt="" />
+        {/*  */}
+        <div className={`${styles.player}`}>
+          <Player />
+        </div>
+        <div className={`${styles.leftMenu}`}>
+          <MenuHome />
+        </div>
         {/*  */}
         <div className={`${styles.campaignIcon}`}>
           {

@@ -16,8 +16,8 @@ const Icon: React.FC<Props> = ({ icon }) => {
         <div
           className={`${styles.icon}`}
           style={{
-            '--left': `-${JSON.parse(icon)[0] * 46}px`,
-            '--top': `-${JSON.parse(icon)[1] * 46}px`
+            '--left': `-${JSON.parse(icon)[0] * 70}px`,
+            '--top': `${-JSON.parse(icon)[1] * 72}px`
           } as any}
         >
           <img className={styles.imgIcon} src="/images/icons/icon-game-1.png" alt="" />

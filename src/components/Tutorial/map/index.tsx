@@ -97,9 +97,11 @@ const Map: React.FC<Props> = () => {
               <Icon icon={ICON_1_ENUM.EXISTS} />
             </div>
           ) : (
-            <div className={`${styles.header}`} onClick={() => dispath(setScreen(SCREEN_ENUM.HOME))}>
-              <Icon icon={ICON_1_ENUM.HOME} />
-            </div>
+            <>
+              <div className={`${styles.header}`} onClick={() => dispath(setScreen(SCREEN_ENUM.HOME))}>
+                <Icon icon={ICON_1_ENUM.HOME} />
+              </div>
+            </>
           )
       }
       <div className={`${styles.wrapper} ${styles[isLandSelect?.type?.toLowerCase()]}`}>

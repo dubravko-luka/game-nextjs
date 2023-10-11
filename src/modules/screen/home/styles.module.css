@@ -19,7 +19,7 @@
 
 .buttonMain {
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   left: 50%;
   width: 1000px;
   height: 100px;
@@ -41,7 +41,7 @@
 
 .buttonLeft {
   position: absolute;
-  bottom: 88px;
+  bottom: 38px;
   left: 457px;
   width: 287px;
   height: 100px;
@@ -57,7 +57,7 @@
 
 .buttonRight {
   position: absolute;
-  bottom: 88px;
+  bottom: 38px;
   left: 1175px;
   width: 287px;
   height: 100px;
@@ -105,4 +105,18 @@
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.player {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.leftMenu {
+  width: 420px;
+  height: 600px;
+  position: absolute;
+  top: 200px;
+  left: 50px;
 }

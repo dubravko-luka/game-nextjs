@@ -5,6 +5,7 @@ import React, { lazy, memo } from 'react';
 import { useSelector } from 'react-redux';
 import Tutorial from '@/modules/screen/tutorial'
 import Home from '@/modules/screen/home'
+import styles from './styles.module.css'
 
 type Props = {
   //
@@ -24,7 +25,6 @@ const screenRoutes = [
 const RouterScreen: React.FC<Props> = () => {
 
   const { screen } = useSelector((state: RootState) => state?.screen);
-  console.log('---------->', screen);
 
   return (
     <>
@@ -32,7 +32,7 @@ const RouterScreen: React.FC<Props> = () => {
         screenRoutes?.map((item, index) => {
           if (item?.screen === screen) {
             return (
-              <div key={index} style={{ width: '100%', height: '100%' }}>
+              <div key={index} className={styles.wrapper}>
                 {item?.component}
               </div>
             )

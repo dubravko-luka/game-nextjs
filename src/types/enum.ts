@@ -27,8 +27,10 @@ export enum ICON_1_ENUM {
   INFO = `[2, 2]`,
   POWER = `[3, 2]`,
   // 
-  LOCK = `[3, 0]`,
-  SHARE = `[3, 1]`,
-  DOWNLOAD = `[3, 2]`,
+  LOCK = `[0, 3]`,
+  SHARE = `[1, 3]`,
+  DOWNLOAD = `[2, 3]`,
   MONEY = `[3, 3]`,
+  //
+  WIFI = `[0, 4]`
 }

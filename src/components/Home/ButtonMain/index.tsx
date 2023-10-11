@@ -12,8 +12,13 @@ const ButtonMain: React.FC<Props> = () => {
   useEffect(() => {
     setSvg(
       <svg id={styles.svg} viewBox="0 0 560 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <animateMotion xlinkHref="#circle" dur="10s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#circle" dur="3s" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path" />
+        </animateMotion>
+
+
+        <animateMotion xlinkHref="#circle2" dur="3s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path2" />
         </animateMotion>
 
         <g clip-path="url(#clip0_307_93)">
@@ -24,8 +29,10 @@ const ButtonMain: React.FC<Props> = () => {
           <path d="M191.5 70.901C181.1 71.301 173.5 64.7343 171 61.401H222C218.4 61.401 215.833 67.7343 215 70.901H191.5Z" fill="url(#paint3_linear_307_93)" />
           <path d="M119 14.0004C127.5 14.0005 130.5 13.601 150.5 38.401L171 61.401M171 61.401C173.5 64.7343 181.1 71.301 191.5 70.901H215C215.833 67.7343 218.4 61.401 222 61.401H171Z" stroke="url(#paint4_linear_307_93)" />
           <path d="M274 62.5L235 61L275.5 59.5L280 64.5L284.5 59.5L327.5 61L285.5 62.5L280 71.5L274 62.5Z" fill="url(#paint5_linear_307_93)" />
-          <path id='path' d="M24 13.5001H120C123.989 13.5001 132.22 15.6213 136.546 23.6239C137.709 25.7765 138.586 28.082 139.752 30.2336L151 51.0001C152.833 55.0001 159.2 62.7001 170 61.5001H228L274 62L276 62L279.5 62L282.5 62H285.5L329.5 60.5001L380 62.0001H387.767C391.881 62.0001 395.953 61.1777 399.745 59.5813L401.667 58.7719C402.884 58.2596 404.028 57.5895 405.07 56.7789V56.7789C406.995 55.2821 408.527 53.3405 409.536 51.1209L410.5 49L416.5 38.0001L422.547 27.0053C425.801 21.0891 430.303 15.4345 436.929 14.137C438.109 13.9059 439.451 13.6936 441 13.5L535.5 13.5001" stroke="black" stroke-opacity="0" />
+          <path id='path' d="M24 13.5H120C123.989 13.5 132.22 15.6212 136.546 23.6238C137.709 25.7764 138.586 28.082 139.752 30.2336L151 51C152.833 55 159.2 62.7 170 61.5H228L272 62V62C273.973 62 275.919 62.4594 277.683 63.3417L280 64.5" stroke="black" stroke-opacity="0" />
+          <path id='path2' d="M536 13.5C536 13.5 443.5 13.3332 435.5 14C427.5 14.6668 421.5 27 409.5 50.5C403.897 60.7043 395.326 62.582 374.5 62L285.5 62.5C283.102 62.4884 281.795 63.0219 279.5 64.5" stroke="black" stroke-opacity="0" />
           <path id='circle' d="M6.50006 -3.52403C9.50008 -2.23838 8.99999 2.87588 5.99998 3.47588C0.999981 4.47588 -5.66665 1.30938 -8 -0.523997C-4.33332 -2.69066 3.00011 -5.02393 6.50006 -3.52403Z" fill="url(#paint10_linear_307_93)" />
+          <path id='circle2' d="M6.50006 -3.52403C9.50008 -2.23838 8.99999 2.87588 5.99998 3.47588C0.999981 4.47588 -5.66665 1.30938 -8 -0.523997C-4.33332 -2.69066 3.00011 -5.02393 6.50006 -3.52403Z" fill="url(#paint10_linear_307_93)" />
         </g>
         <defs>
           <linearGradient id="paint0_linear_307_93" x1="280" y1="6" x2="280" y2="65.542" gradientUnits="userSpaceOnUse">
