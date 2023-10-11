@@ -38,7 +38,3 @@
 .item:hover {
   opacity: 1;
 }
-
-.icon {
-  transform: translateY(-6px);
-}

@@ -128,3 +128,10 @@
   top: 200px;
   right: 50px;
 }
+
+.setting {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  height: 79px;
+}

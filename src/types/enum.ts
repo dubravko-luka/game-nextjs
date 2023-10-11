@@ -41,6 +41,9 @@ export enum ICON_1_ENUM {
   ACTIVITY = `[1, 5]`,
   CARD = `[2, 5]`,
   KNAPSACK = `[3, 5]`,
+  //
+
+  LETTER = `[0, 6]`,
 }
 
 export enum ICON_2_ENUM {

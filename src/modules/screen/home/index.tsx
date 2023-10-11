@@ -10,6 +10,7 @@ import { setScreen } from '@/store/actions/screenAction';
 import _ from 'lodash';
 import MenuHomeLeft from '@/components/Home/Menu/1'
 import MenuHomeRight from '@/components/Home/Menu/2'
+import MenuSetting from '@/components/Home/Menu/3'
 import Player from '@/components/Home/Player';
 
 type Props = {
@@ -50,10 +51,12 @@ const HomeScreen: React.FC<Props> = () => {
         <div className={`${styles.player}`}>
           <Player />
         </div>
+        <div className={`${styles.setting}`}>
+          <MenuSetting />
+        </div>
         <div className={`${styles.leftMenu}`}>
           <MenuHomeLeft />
         </div>
-
         <div className={`${styles.rightMenu}`}>
           <MenuHomeRight />
         </div>
