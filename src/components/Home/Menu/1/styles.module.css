@@ -9,25 +9,36 @@
   height: calc(100% / var(--item));
   display: flex;
   align-items: center;
-  padding: 0px 20px;
   box-sizing: border-box;
   font-size: 24px;
   text-transform: uppercase;
   font-weight: bold;
   opacity: .8;
   position: relative;
+  gap: 10px;
+  color: #FBF6C7;
 }
 
 .item:nth-child(odd) {
   justify-content: flex-start;
-  background: linear-gradient(90deg, rgba(42, 96, 166, 0.00) 0%, #2A60A6 23.96%, rgba(42, 96, 166, 0.00) 100%);
 }
 
 .item:nth-child(even) {
   justify-content: flex-end;
+}
+
+.item:nth-child(odd):hover {
+  background: linear-gradient(90deg, rgba(42, 96, 166, 0.00) 0%, #2A60A6 23.96%, rgba(42, 96, 166, 0.00) 100%);
+}
+
+.item:nth-child(even):hover {
   background: linear-gradient(270deg, rgba(42, 96, 166, 0.00) 0%, #2A60A6 22.4%, rgba(42, 96, 166, 0.00) 100%);
 }
 
 .item:hover {
   opacity: 1;
+}
+
+.icon {
+  transform: translateY(-6px);
 }

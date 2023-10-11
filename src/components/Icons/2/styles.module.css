@@ -1,0 +1,17 @@
+.wrapper {
+  width: 79px;
+  height: 79px;
+  overflow: hidden;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  width: 286px;
+}
+
+.imgIcon {
+  min-width: 100%;
+}

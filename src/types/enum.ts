@@ -33,5 +33,18 @@ export enum ICON_1_ENUM {
   MONEY = `[3, 3]`,
   //
   WIFI = `[0, 4]`,
-  RANK = `[1, 4]`
+  RANK = `[1, 4]`,
+  SHOP = `[2, 4]`,
+  ACHIEVEMENT = `[3, 4]`,
+  //
+  DAILY_TASK = `[0, 5]`,
+  ACTIVITY = `[1, 5]`,
+  CARD = `[2, 5]`,
+  KNAPSACK = `[3, 5]`,
+}
+
+export enum ICON_2_ENUM {
+  NUMBER_1 = `[0, 0]`,
+  NUMBER_2 = `[1, 0]`,
+  NUMBER_3 = `[2, 0]`,
 }

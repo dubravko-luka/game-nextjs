@@ -8,7 +8,8 @@ import { MODE_GAME, SCREEN_ENUM } from '@/types/enum';
 import { useDispatch } from 'react-redux';
 import { setScreen } from '@/store/actions/screenAction';
 import _ from 'lodash';
-import MenuHome from '@/components/Home/Menu/1'
+import MenuHomeLeft from '@/components/Home/Menu/1'
+import MenuHomeRight from '@/components/Home/Menu/2'
 import Player from '@/components/Home/Player';
 
 type Props = {
@@ -50,11 +51,11 @@ const HomeScreen: React.FC<Props> = () => {
           <Player />
         </div>
         <div className={`${styles.leftMenu}`}>
-          <MenuHome />
+          <MenuHomeLeft />
         </div>
 
         <div className={`${styles.rightMenu}`}>
-          <MenuHome />
+          <MenuHomeRight />
         </div>
         {/*  */}
         <div className={`${styles.campaignIcon}`}>
