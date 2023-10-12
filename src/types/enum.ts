@@ -51,3 +51,7 @@ export enum ICON_2_ENUM {
   NUMBER_2 = `[1, 0]`,
   NUMBER_3 = `[2, 0]`,
 }
+
+export enum INDEXEDDB_OBJECT_NAME {
+  IMAGES = "images"
+}

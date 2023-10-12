@@ -49,17 +49,20 @@
   animation: img_1_animation 2s linear infinite;
   transform: rotate(-10deg);
   left: -250px;
+  z-index: -1;
 }
 
 .img_2 {
   animation: img_2_animation 2s linear infinite;
   left: -120px;
+  z-index: 1;
 }
 
 .img_3 {
   animation: img_3_animation 2s linear infinite;
   transform: rotate(10deg);
   left: 0px;
+  z-index: 2;
 }
 
 .img {

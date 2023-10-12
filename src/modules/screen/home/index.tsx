@@ -12,6 +12,7 @@ import MenuHomeLeft from '@/components/Home/Menu/1'
 import MenuHomeRight from '@/components/Home/Menu/2'
 import MenuSetting from '@/components/Home/Menu/3'
 import Player from '@/components/Home/Player';
+import Image from '@/components/Image';
 
 type Props = {
   //
@@ -46,7 +47,7 @@ const HomeScreen: React.FC<Props> = () => {
   return (
     <>
       <div className={`${styles.wrapper}`}>
-        <img className={styles.imgBackground} src="/images/home/background.jpeg" alt="" />
+        <Image name='/images/home/background.jpeg' option={{ className: `${styles.imgBackground}` }} />
         {/*  */}
         <div className={`${styles.player}`}>
           <Player />

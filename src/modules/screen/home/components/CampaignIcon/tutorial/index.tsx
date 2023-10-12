@@ -1,5 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
 import styles from './styles.module.css'
+import Image from '@/components/Image';
 
 type Props = {
   //
@@ -11,13 +12,13 @@ const CampaignIconTutorial: React.FC<Props> = () => {
     <>
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.wrapImg} ${styles.img_1}`}>
-          <img className={styles.img} src="/images/cards/blessing.png" alt="" />
+          <Image name='/images/cards/blessing.png' option={{ className: `${styles.img}` }} />
         </div>
         <div className={`${styles.wrapImg} ${styles.img_2}`}>
-          <img className={`${styles.img}`} src="/images/cards/jormungandr.png" alt="" />
+          <Image name='/images/cards/jormungandr.png' option={{ className: `${styles.img}` }} />
         </div>
         <div className={`${styles.wrapImg} ${styles.img_3}`}>
-          <img className={`${styles.img}`} src="/images/cards/takeit.png" alt="" />
+          <Image name='/images/cards/takeit.png' option={{ className: `${styles.img}` }} />
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
 import styles from './styles.module.css'
+import Image from '@/components/Image';
 
 type Props = {
   //
@@ -11,12 +12,12 @@ const CampaignIconRanked: React.FC<Props> = () => {
     <>
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.wrapImg}`}>
-          <img className={styles.imgHero} src="/images/cards/hero/thomas-model.png" alt="" />
+          <Image name='/images/cards/hero/thomas-model.png' option={{ className: `${styles.imgHero}` }} />
           <div className={`${styles.wrapSvg}`}>
             <svg className={styles.svg} width="814" height="948" viewBox="0 0 814 948" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
               <rect width="814" height="948" fill="url(#pattern0)" />
               <path d="M289 499.5C284 469 294 462 297 459H298L299.5 462L301.5 466.5L303.5 469.5L305.5 472.5L307 474H309.5H314H318.5H321.5L323 472.5L324.5 469.5L329 457.5C330.6 458.3 334.667 461.5 336.5 463C342.5 467.8 346.333 477.667 347.5 482C349.5 492.8 344 504.167 341 508.5C334.6 518.1 318.333 519.5 311 519C302.2 518.6 292.667 505.833 289 499.5Z" fill="#3A3938" stroke="black" />
-              <path className={styles.animationOpacity} fill-rule="evenodd" clip-rule="evenodd" d="M294 470C294 469.448 294.448 469 295 469H301.979C302.306 469 302.611 469.159 302.799 469.427L305.701 473.573C305.889 473.841 306.194 474 306.521 474H310.5C311.052 474 311.5 474.448 311.5 475V507C311.5 507.552 311.052 508 310.5 508H295C294.448 508 294 507.552 294 507V470ZM314.429 481.705C314.18 481.296 314.256 480.767 314.611 480.445L318.856 476.586C319.225 476.25 319.785 476.238 320.169 476.557L323.86 479.633C324.511 480.176 325.5 479.713 325.5 478.865V470C325.5 469.448 325.948 469 326.5 469H335C335.552 469 336 469.448 336 470V507C336 507.552 335.552 508 335 508H328.5C327.948 508 327.5 507.552 327.5 507V504.284C327.5 503.412 326.462 502.958 325.822 503.549L321.778 507.282C321.355 507.672 320.693 507.627 320.327 507.183L314.577 500.201C314.25 499.803 314.278 499.222 314.642 498.858L320.444 493.056C320.77 492.73 320.831 492.223 320.591 491.829L314.429 481.705ZM301 497C300.448 497 300 496.552 300 496V481C300 480.448 300.448 480 301 480H304C304.552 480 305 480.448 305 481V496C305 496.552 304.552 497 304 497H301Z" fill="#FAC777" />
+              <path className={styles.animationOpacity} fillRule="evenodd" clipRule="evenodd" d="M294 470C294 469.448 294.448 469 295 469H301.979C302.306 469 302.611 469.159 302.799 469.427L305.701 473.573C305.889 473.841 306.194 474 306.521 474H310.5C311.052 474 311.5 474.448 311.5 475V507C311.5 507.552 311.052 508 310.5 508H295C294.448 508 294 507.552 294 507V470ZM314.429 481.705C314.18 481.296 314.256 480.767 314.611 480.445L318.856 476.586C319.225 476.25 319.785 476.238 320.169 476.557L323.86 479.633C324.511 480.176 325.5 479.713 325.5 478.865V470C325.5 469.448 325.948 469 326.5 469H335C335.552 469 336 469.448 336 470V507C336 507.552 335.552 508 335 508H328.5C327.948 508 327.5 507.552 327.5 507V504.284C327.5 503.412 326.462 502.958 325.822 503.549L321.778 507.282C321.355 507.672 320.693 507.627 320.327 507.183L314.577 500.201C314.25 499.803 314.278 499.222 314.642 498.858L320.444 493.056C320.77 492.73 320.831 492.223 320.591 491.829L314.429 481.705ZM301 497C300.448 497 300 496.552 300 496V481C300 480.448 300.448 480 301 480H304C304.552 480 305 480.448 305 481V496C305 496.552 304.552 497 304 497H301Z" fill="#FAC777" />
               <path className={styles.animationOpacity} d="M188.5 452.5C186.5 461.7 191.667 470.333 194.5 473.5C203.3 475.1 210.5 469.833 213 467C218.6 458.6 219 451.5 218.5 449L214 443.5C207.6 437.9 200.667 439.167 198 440.5C191.6 442.9 189 449.5 188.5 452.5Z" fill="#F8ED9C" stroke="black" />
               <path d="M373.5 423.5L375.5 421L377 422L378 425L377 428L375.5 430.5L373.5 429.5V423.5Z" fill="#FACD7D" stroke="black" />
               <path className={styles.animationOpacity} d="M466.5 434.5L468.5 439.5C472 448 470.1 470.5 466.5 476.5C462.9 482.5 459.667 483.667 458.5 483.5C456.5 481.9 455 477.833 454.5 476C454 467 453.7 447.1 456.5 439.5C459.3 431.9 463 431.333 464.5 432L466.5 434.5Z" fill="url(#paint1_linear_317_123)" />
@@ -34,8 +35,8 @@ const CampaignIconRanked: React.FC<Props> = () => {
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                   <use xlinkHref="#image0_317_123" transform="matrix(0.0012285 0 0 0.00105485 -0.357494 -0.623418)" />
                 </pattern>
-                <filter id="filter0_d_317_123" x="566.5" y="462.047" width="59.3251" height="103.953" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <filter id="filter0_d_317_123" x="566.5" y="462.047" width="59.3251" height="103.953" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                   <feOffset />
                   <feGaussianBlur stdDeviation="5" />
@@ -45,12 +46,12 @@ const CampaignIconRanked: React.FC<Props> = () => {
                   <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_317_123" result="shape" />
                 </filter>
                 <linearGradient id="paint0_linear_317_123" x1="214" y1="465.5" x2="186" y2="439.5" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#A56634" />
-                  <stop offset="1" stop-color="#A56634" stop-opacity="0" />
+                  <stop stopColor="#A56634" />
+                  <stop offset="1" stopColor="#A56634" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient id="paint1_linear_317_123" x1="470" y1="460" x2="454" y2="458.5" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#7C603C" />
-                  <stop offset="1" stop-color="#FF8F00" stop-opacity="0" />
+                  <stop stopColor="#7C603C" />
+                  <stop offset="1" stopColor="#FF8F00" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>

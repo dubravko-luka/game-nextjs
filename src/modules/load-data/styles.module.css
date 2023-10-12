@@ -1,0 +1,52 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+}
+
+.bgLoad {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.contnent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.textLoad {
+  position: absolute;
+  bottom: 192px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 147px;
+  width: 1053px;
+  height: 12px;
+  left: 960px;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progressBar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--width);
+  height: 100%;
+  background: linear-gradient(90deg, #1F4019 0%, #31601F 51.95%, #45822C 100%);
+  border-radius: 20px;
+}

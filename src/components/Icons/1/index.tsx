@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import styles from './styles.module.css'
 import { ICON_1_ENUM } from '@/types/enum';
+import Image from '@/components/Image';
 
 type Props = {
   icon: ICON_1_ENUM
@@ -20,7 +21,7 @@ const Icon: React.FC<Props> = ({ icon }) => {
             '--top': `${-JSON.parse(icon)[1] * 72}px`
           } as any}
         >
-          <img className={styles.imgIcon} src="/images/icons/icon-game-1.png" alt="" />
+          <Image name={'/images/icons/icon-game-1.png'} option={{ className: `${styles.imgIcon}` }} />
         </div>
       </div>
     </>

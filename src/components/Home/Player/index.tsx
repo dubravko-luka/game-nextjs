@@ -1,11 +1,12 @@
 import React, { memo } from 'react';
 import styles from './styles.module.css'
+import Image from '@/components/Image';
 
 export const Avatar: React.FC = () => {
   return (
     <>
       <div className={`${styles.avatarWrapper}`}>
-        <img className={styles.avatar} src="/images/player/avatar.png" alt="" />
+        <Image name={'/images/player/avatar.png'} option={{ className: `${styles.avatar}` }} />
       </div>
     </>
   )

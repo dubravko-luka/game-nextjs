@@ -8,6 +8,7 @@ import Icon from '@/components/Icons/1'
 import { ICON_1_ENUM, SCREEN_ENUM } from '@/types/enum';
 import { useDispatch } from 'react-redux';
 import { setScreen } from '@/store/actions/screenAction';
+import Image from '@/components/Image';
 
 type Props = {
   //
@@ -115,7 +116,7 @@ const Map: React.FC<Props> = () => {
                 {
                   (item?.id === Number(currentMap?.id) || item?.id === Number(currentMap?.id) - 1) && <div className={`${styles.sphere}`}></div>
                 }
-                <img className={styles.imgMap} src={item?.src} alt={item?.name} />
+                <Image name={item?.src} option={{ className: `${styles.imgMap}` }} />
               </div>
             ))
           }
@@ -149,7 +150,7 @@ const Map: React.FC<Props> = () => {
                   setHoverIndex(-1)
                 }}
               >
-                <img className={styles.imgMap} src={`${item?.src}`} alt={item?.name} />
+                <Image name={item?.src} option={{ className: `${styles.imgMap}` }} />
               </div>
             ))
           }

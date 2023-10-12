@@ -14,7 +14,7 @@
 }
 
 .content {
-  padding: 20px 0px;
+  padding: 2px 0px 20px;
   box-sizing: border-box;
   height: calc(100% - 100px);
   overflow: auto;
@@ -22,11 +22,45 @@
 }
 
 .item {
+  position: relative;
+  padding: 0px 5px;
+  box-sizing: border-box;
+  margin-bottom: 2px;
+}
+
+.item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 200, 0, 0.5) 0%, rgba(255, 199, 0, 0.00) 100%);
+  z-index: 1;
+  transition: width .3s linear;
+}
+
+.item:hover:before {
+  width: 100%;
+}
+
+.item:hover:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: rgba(255, 200, 0, 1);
+}
+
+.rankDetail {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
 }
 
 .numberRank {
