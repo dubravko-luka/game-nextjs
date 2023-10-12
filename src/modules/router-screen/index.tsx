@@ -5,6 +5,7 @@ import React, { lazy, memo } from 'react';
 import { useSelector } from 'react-redux';
 import Tutorial from '@/modules/screen/tutorial'
 import Home from '@/modules/screen/home'
+import Knapsack from '@/modules/screen/knapsack'
 import styles from './styles.module.css'
 
 type Props = {
@@ -19,6 +20,10 @@ const screenRoutes = [
   {
     screen: SCREEN_ENUM.TUTORIAL,
     component: <Tutorial />
+  },
+  {
+    screen: SCREEN_ENUM.KNAPSACK,
+    component: <Knapsack />
   }
 ]
 

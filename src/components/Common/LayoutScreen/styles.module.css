@@ -1,0 +1,12 @@
+.wrapper {
+  position: absolute;
+  top: 178px;
+  width: 100%;
+  height: calc(100% - 178px);
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

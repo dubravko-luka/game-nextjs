@@ -1,13 +1,21 @@
 import React, { memo } from 'react';
 import styles from './styles.module.css'
 import Icon from '@/components/Icons/1'
-import { ICON_1_ENUM } from '@/types/enum';
+import { ICON_1_ENUM, SCREEN_ENUM } from '@/types/enum';
+import { useDispatch } from 'react-redux';
+import { setScreen } from '@/store/actions/screenAction';
 
 type Props = {
   //
 };
 
-const menuSetting = [
+type MENU_SETTING = {
+  name: string,
+  icon: ICON_1_ENUM,
+  screen?: SCREEN_ENUM
+}
+
+const menuSetting: MENU_SETTING[] = [
   {
     name: 'Shop',
     icon: ICON_1_ENUM.SHOP,
@@ -31,16 +39,26 @@ const menuSetting = [
   {
     name: 'Knapsack',
     icon: ICON_1_ENUM.KNAPSACK,
+    screen: SCREEN_ENUM.KNAPSACK
   }
 ]
 
 const MenuHome: React.FC<Props> = () => {
+
+  const dispath = useDispatch()
+
+  const handleSelectScreen = (item: MENU_SETTING) => {
+    if (item?.screen) {
+      dispath(setScreen(item?.screen))
+    }
+  }
+
   return (
     <>
       <div className={`${styles.wrapper}`}>
         {
           menuSetting.map((item, index) => (
-            <div className={`${styles.item}`} key={index} style={{ '--item': menuSetting.length } as any}>
+            <div onClick={() => handleSelectScreen(item)} className={`${styles.item}`} key={index} style={{ '--item': menuSetting.length } as any}>
               {
                 index % 2 !== 0 && item.name
               }

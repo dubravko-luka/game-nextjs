@@ -2,7 +2,8 @@ export enum SCREEN_ENUM {
   HOME = 'HOME',
   RANKED = "RANKED",
   PVP = "PVP",
-  TUTORIAL = "TUTORIAL"
+  TUTORIAL = "TUTORIAL",
+  KNAPSACK = "KNAPSACK"
 }
 
 export enum MODE_GAME {
@@ -54,4 +55,11 @@ export enum ICON_2_ENUM {
 
 export enum INDEXEDDB_OBJECT_NAME {
   IMAGES = "images"
+}
+
+export enum KNAPSACK_ENUM_TAB {
+  ALL = "ALL",
+  CARD_FRAGMENT = "CARD_FRAGMENT",
+  ITEMS = "ITEMS",
+  GIFT_BAG = "GIFT_BAG",
 }

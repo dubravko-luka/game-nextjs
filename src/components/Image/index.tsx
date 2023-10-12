@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 type Props = {
   name: string,
-  option: any
+  option?: any
 };
 
 const Image: React.FC<Props> = ({ name, option }) => {
