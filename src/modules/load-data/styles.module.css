@@ -38,6 +38,7 @@
   transform: translateX(-50%);
   border-radius: 20px;
   overflow: hidden;
+  transition: all .3s linear;
 }
 
 .progressBar::before {
