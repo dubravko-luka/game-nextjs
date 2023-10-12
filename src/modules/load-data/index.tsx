@@ -10,19 +10,23 @@ type Props = {
   setLoaded: any
 }
 
+const version = '1.0.1'
+
 const LoadData: React.FC<Props> = ({ setLoaded }) => {
 
   const [progress, setProgress] = useState(0);
   const dispatch = useDispatch();
 
-  const handleSaveImageToDB = () => {
+  const handleSaveImageToDB = async () => {
     clearAllDataImage();
     const imageList = imagesList;
 
     const totalImages = imageList.length;
     let loadedImages = 0;
 
-    openDB()
+    const images: IIndexedDbImage[] = [];
+
+    await openDB()
       .then((db) => {
         const loadImages = async () => {
           for (let index = 0; index < imageList.length; index++) {
@@ -30,17 +34,26 @@ const LoadData: React.FC<Props> = ({ setLoaded }) => {
             const response = await fetch(imageUrl);
             if (response.ok) {
               const blob = await response.blob();
-              const base64Image = await new Promise((resolve) => {
+              const base64Image: any = await new Promise((resolve) => {
                 const reader = new FileReader();
                 reader.onload = () => resolve(reader.result);
                 reader.readAsDataURL(blob);
               });
 
-              saveImageToDB(db, { id: imageListName[index], base64Image });
+              await saveImageToDB(db, { id: imageListName[index], base64Image });
+              images.push({
+                key: imageListName[index].toString(),
+                base64Image: base64Image.toString()
+              })
 
               loadedImages++;
               setProgress((loadedImages / totalImages) * 100);
             }
+          }
+          if (images.length === imageListName.length) {
+            dispatch(setImages(images));
+            localStorage.setItem('ver.', version);
+            setLoaded(true)
           }
         };
 
@@ -48,20 +61,19 @@ const LoadData: React.FC<Props> = ({ setLoaded }) => {
       })
       .catch((error) => {
         console.log(error);
-      });
-    handleGetAllImage()
+      })
   }
 
   const handleGetAllImage = async () => {
     const images: IIndexedDbImage[] = await getFullImage();
     dispatch(setImages(images));
+    localStorage.setItem('ver.', version);
     setLoaded(true)
   }
 
   const handleImageLoad = async () => {
-    const imagesStore: any = await getObjectStoreKeys();
-    const missingElements = imageListName.filter((element) => !imagesStore.includes(element));
-    if (missingElements.length > 0) {
+    const ver = localStorage.getItem("ver.");
+    if (ver !== version) {
       handleSaveImageToDB()
     } else {
       setProgress(100)

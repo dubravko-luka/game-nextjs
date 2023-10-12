@@ -21,14 +21,14 @@
 }
 
 .items {
-  width: 55%;
+  width: 85%;
   height: 100%;
-  overflow: auto;
   position: relative;
+  padding-bottom: 20px;
+  overflow: hidden;
 }
 
-.tab:before,
-.items:before {
+.tab:before {
   content: '';
   position: absolute;
   top: 0;
@@ -40,9 +40,4 @@
 
 .tab:before {
   right: -2px;
-}
-
-.itemDetail {
-  width: 30%;
-  height: 100%;
 }

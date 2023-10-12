@@ -30,10 +30,6 @@ const KnapsackScreen: React.FC<Props> = () => {
           <div className={`${styles.items}`}>
             <Items />
           </div>
-
-          <div className={`${styles.itemDetail}`}>
-            {/* <Tab /> */}
-          </div>
         </div>
       </LayoutScreen>
     </>
