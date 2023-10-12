@@ -4,12 +4,14 @@ import windowReducer from './reducers/windowReducer';
 import screenReducer from './reducers/screenReducer';
 import imageReducer from './reducers/imageReducer';
 import knapsackReducer from './reducers/knapsackReducer';
+import cardReducer from './reducers/cardReducer';
 
 const rootReducer = combineReducers({
   window: windowReducer,
   screen: screenReducer,
   image: imageReducer,
   knapsack: knapsackReducer,
+  card: cardReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

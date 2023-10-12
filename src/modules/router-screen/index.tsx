@@ -7,6 +7,7 @@ import Tutorial from '@/modules/screen/tutorial'
 import Home from '@/modules/screen/home'
 import Knapsack from '@/modules/screen/knapsack'
 import styles from './styles.module.css'
+import Card from '../screen/card';
 
 type Props = {
   //
@@ -24,6 +25,10 @@ const screenRoutes = [
   {
     screen: SCREEN_ENUM.KNAPSACK,
     component: <Knapsack />
+  },
+  {
+    screen: SCREEN_ENUM.CARD,
+    component: <Card />
   }
 ]
 

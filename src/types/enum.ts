@@ -3,7 +3,8 @@ export enum SCREEN_ENUM {
   RANKED = "RANKED",
   PVP = "PVP",
   TUTORIAL = "TUTORIAL",
-  KNAPSACK = "KNAPSACK"
+  KNAPSACK = "KNAPSACK",
+  CARD = "CARD"
 }
 
 export enum MODE_GAME {
@@ -62,4 +63,12 @@ export enum KNAPSACK_ENUM_TAB {
   CARD_FRAGMENT = "CARD_FRAGMENT",
   ITEMS = "ITEMS",
   GIFT_BAG = "GIFT_BAG",
+}
+
+export enum CARD_ENUM_TAB {
+  ALL = "ALL",
+  HUMAN = "HUMAN",
+  GOD = "GOD",
+  UNDEAD = "UNDEAD",
+  TITAN = "TITAN",
 }

@@ -31,6 +31,7 @@ const menuSetting: MENU_SETTING[] = [
   {
     name: 'Card',
     icon: ICON_1_ENUM.CARD,
+    screen: SCREEN_ENUM.CARD
   },
   {
     name: 'Achievement',
