@@ -16,7 +16,7 @@ const ItemDetail: React.FC<Props> = ({ item }) => {
               <Image name={item.src} option={{ className: styles.imgDetail }} />
             </div>
             <p className={`${styles.itemName}`}>{item.name}</p>
-            <p className={`${styles.itemQuntity}`}>Already have <span className={styles.numberQuantity}>1</span></p>
+            <p className={`${styles.itemQuntity}`}>{item?.type % 2 === 0 ? 'Have owned' : 'Not owned yet'}</p>
           </div>
         </div>
         <div className={`${styles.detailDescription}`}>

@@ -33,7 +33,7 @@
 
 .item {
   width: 150px;
-  height: 150px;
+  height: 219px;
   background: #000;
   overflow: hidden;
   position: relative;
@@ -46,41 +46,6 @@
 
 .item.active {
   border: 3px solid rgba(255, 200, 0, 1);
-}
-
-.item:before {
-  content: '';
-  position: absolute;
-  right: -3px;
-  top: -3px;
-  width: 0px;
-  border-top: 10px solid #FFC700;
-  border-right: 10px solid #FFC700;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid transparent;
-  z-index: 1;
-  opacity: 0.5;
-}
-
-.item:after {
-  content: '';
-  position: absolute;
-  left: -3px;
-  bottom: -3px;
-  width: 0px;
-  border-bottom: 10px solid #FFC700;
-  border-left: 10px solid #FFC700;
-  border-top: 10px solid transparent;
-  border-right: 10px solid transparent;
-  z-index: 1;
-  opacity: 0.5;
-}
-
-.item:hover:before,
-.item:hover::after,
-.item.active:before,
-.item.active:after {
-  opacity: 1;
 }
 
 .imgItem {

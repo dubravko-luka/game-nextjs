@@ -3,63 +3,76 @@ import styles from './styles.module.css'
 import Image from '@/components/Image';
 import { RootState } from '@/store/types';
 import { useSelector } from 'react-redux';
-import { KNAPSACK_ENUM_TAB } from '@/types/enum';
+import { CARD_ENUM_TAB } from '@/types/enum';
 import Detail from './detail';
 
 type Props = {
   //
 };
 
-const card_fragments = [
+const human = [
   {
     id: 0,
     type: 0,
-    name: "Puzzle piece MAX",
-    src: '/images/player/avatar.png'
+    name: "Mage",
+    src: '/images/cards/mage.png'
   }
 ]
 
-const items = [
+const god = [
   {
     id: 0,
     type: 1,
-    name: "Gemstone",
-    src: '/images/icons/gemstone.png'
+    name: "Takeit",
+    src: '/images/cards/takeit.png'
   }
 ]
 
-const gift_bags = [
+const titan = [
   {
     id: 0,
     type: 2,
-    name: "Pack Card",
-    src: '/images/icons/pack-card.png'
+    name: "Surtur",
+    src: '/images/cards/surtur.png'
+  }
+]
+
+const undead = [
+  {
+    id: 0,
+    type: 3,
+    name: "Hel",
+    src: '/images/cards/hel.png'
   }
 ]
 
 const all = [
-  ...card_fragments,
-  ...items,
-  ...gift_bags,
+  ...human,
+  ...god,
+  ...undead,
+  ...titan
 ]
 
 const Iterms: React.FC<Props> = () => {
 
   const [itemSelect, setItemSelect] = useState(all[0])
-  const tabActive = useSelector((state: RootState) => state?.knapsack?.tab)
+  const tabActive = useSelector((state: RootState) => state?.card?.tab)
 
   useEffect(() => {
-    if (tabActive === KNAPSACK_ENUM_TAB.ALL) {
+    if (tabActive === CARD_ENUM_TAB.ALL) {
       setItemSelect(all[0])
     }
-    if (tabActive === KNAPSACK_ENUM_TAB.CARD_FRAGMENT) {
-      setItemSelect(card_fragments[0])
+    if (tabActive === CARD_ENUM_TAB.GOD) {
+      setItemSelect(god[0])
     }
-    if (tabActive === KNAPSACK_ENUM_TAB.ITEMS) {
-      setItemSelect(items[0])
+    if (tabActive === CARD_ENUM_TAB.HUMAN) {
+      setItemSelect(human[0])
     }
-    if (tabActive === KNAPSACK_ENUM_TAB.GIFT_BAG) {
-      setItemSelect(gift_bags[0])
+    if (tabActive === CARD_ENUM_TAB.TITAN) {
+      setItemSelect(titan[0])
+    }
+    if (tabActive === CARD_ENUM_TAB.UNDEAD) {
+      setItemSelect(undead[0])
     }
   }, [tabActive])
 
@@ -69,28 +82,35 @@ const Iterms: React.FC<Props> = () => {
         <div className={`${styles.wrapItems}`}>
           <div className={`${styles.items}`}>
             {
-              tabActive === KNAPSACK_ENUM_TAB.ALL && all.map((item, index) => (
+              tabActive === CARD_ENUM_TAB.ALL && all.map((item, index) => (
                 <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
                   <Image option={{ className: styles.imgItem }} name={item?.src} />
                 </div>
               ))
             }
             {
-              tabActive === KNAPSACK_ENUM_TAB.CARD_FRAGMENT && card_fragments.map((item, index) => (
+              tabActive === CARD_ENUM_TAB.GOD && god.map((item, index) => (
                 <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
                   <Image option={{ className: styles.imgItem }} name={item?.src} />
                 </div>
               ))
             }
             {
-              tabActive === KNAPSACK_ENUM_TAB.ITEMS && items.map((item, index) => (
+              tabActive === CARD_ENUM_TAB.HUMAN && human.map((item, index) => (
                 <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
                   <Image option={{ className: styles.imgItem }} name={item?.src} />
                 </div>
               ))
             }
             {
-              tabActive === KNAPSACK_ENUM_TAB.GIFT_BAG && gift_bags.map((item, index) => (
+              tabActive === CARD_ENUM_TAB.TITAN && titan.map((item, index) => (
+                <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
+                  <Image option={{ className: styles.imgItem }} name={item?.src} />
+                </div>
+              ))
+            }
+            {
+              tabActive === CARD_ENUM_TAB.UNDEAD && undead.map((item, index) => (
                 <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
                   <Image option={{ className: styles.imgItem }} name={item?.src} />
                 </div>
