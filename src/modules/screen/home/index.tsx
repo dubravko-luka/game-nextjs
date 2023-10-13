@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
 import styles from './styles.module.css'
-import { ButtonMain, ButtonLeft, ButtonRight } from '@/components/Home/ButtonMain';
+import { ButtonMain, ButtonLeft, ButtonRight } from '@/modules/screen/home/components/ButtonMain';
 import CamPaignIconPVP from './components/CampaignIcon/pvp'
 import CamPaignIconTutorial from './components/CampaignIcon/tutorial'
 import CamPaignIconRanked from './components/CampaignIcon/ranked'
@@ -8,10 +8,10 @@ import { MODE_GAME, SCREEN_ENUM } from '@/types/enum';
 import { useDispatch } from 'react-redux';
 import { setScreen } from '@/store/actions/screenAction';
 import _ from 'lodash';
-import MenuHomeLeft from '@/components/Home/Menu/1'
-import MenuHomeRight from '@/components/Home/Menu/2'
-import MenuSetting from '@/components/Home/Menu/3'
-import Player from '@/components/Home/Player';
+import MenuHomeLeft from '@/modules/screen/home/components/Menu/1'
+import MenuHomeRight from '@/modules/screen/home/components/Menu/2'
+import MenuSetting from '@/modules/screen/home/components/Menu/3'
+import Player from '@/components/Player';
 import Image from '@/components/Image';
 
 type Props = {

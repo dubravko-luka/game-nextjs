@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Map from '@/components/Tutorial/map'
+import Map from '@/modules/screen/tutorial/components/map'
 import styles from './styles.module.css'
 
 type Props = {

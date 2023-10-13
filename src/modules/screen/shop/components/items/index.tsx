@@ -52,7 +52,7 @@ const card = [
   {
     id: 0,
     type: SHOP_ENUM_TAB.CARD,
-    name: "Gemstone",
+    name: "Pack Card",
     src: '/images/items/pack-card.png'
   }
 ]
