@@ -2,6 +2,7 @@ import { CardState } from './cardTypes';
 import { ImageState } from './imageTypes';
 import { KnapsackState } from './knapsackTypes';
 import { ScreenState } from './screenTypes';
+import { ShopState } from './shopTypes';
 import { WindowState } from './windowTypes';
 
 export interface RootState {
@@ -10,4 +11,5 @@ export interface RootState {
   image: ImageState;
   knapsack: KnapsackState;
   card: CardState;
+  shop: ShopState;
 }

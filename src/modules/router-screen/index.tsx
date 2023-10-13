@@ -1,13 +1,14 @@
 import { RootState } from '@/store/types';
 import { SCREEN_ENUM } from '@/types/enum';
 import _ from 'lodash';
-import React, { lazy, memo } from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import Tutorial from '@/modules/screen/tutorial'
 import Home from '@/modules/screen/home'
 import Knapsack from '@/modules/screen/knapsack'
 import styles from './styles.module.css'
 import Card from '../screen/card';
+import Shop from '../screen/shop';
 
 type Props = {
   //
@@ -21,6 +22,10 @@ const screenRoutes = [
   {
     screen: SCREEN_ENUM.TUTORIAL,
     component: <Tutorial />
+  },
+  {
+    screen: SCREEN_ENUM.SHOP,
+    component: <Shop />
   },
   {
     screen: SCREEN_ENUM.KNAPSACK,

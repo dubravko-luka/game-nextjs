@@ -4,7 +4,8 @@ export enum SCREEN_ENUM {
   PVP = "PVP",
   TUTORIAL = "TUTORIAL",
   KNAPSACK = "KNAPSACK",
-  CARD = "CARD"
+  CARD = "CARD",
+  SHOP = "SHOP"
 }
 
 export enum MODE_GAME {
@@ -71,4 +72,10 @@ export enum CARD_ENUM_TAB {
   GOD = "GOD",
   UNDEAD = "UNDEAD",
   TITAN = "TITAN",
+}
+
+export enum SHOP_ENUM_TAB {
+  HERO = "HERO",
+  CARD = "CARD",
+  MYSTERY_BOX = "MYSTERY_BOX",
 }

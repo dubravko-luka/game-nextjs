@@ -19,6 +19,7 @@ const menuSetting: MENU_SETTING[] = [
   {
     name: 'Shop',
     icon: ICON_1_ENUM.SHOP,
+    screen: SCREEN_ENUM.SHOP
   },
   {
     name: 'Activity',

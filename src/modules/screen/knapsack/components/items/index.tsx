@@ -24,7 +24,7 @@ const items = [
     id: 0,
     type: 1,
     name: "Gemstone",
-    src: '/images/icons/gemstone.png'
+    src: '/images/items/gemstone.png'
   }
 ]
 
@@ -33,7 +33,7 @@ const gift_bags = [
     id: 0,
     type: 2,
     name: "Pack Card",
-    src: '/images/icons/pack-card.png'
+    src: '/images/items/pack-card.png'
   }
 ]
 
