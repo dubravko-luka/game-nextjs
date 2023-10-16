@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import Tutorial from '@/modules/screen/tutorial'
 import Home from '@/modules/screen/home'
 import Knapsack from '@/modules/screen/knapsack'
+import Activity from '@/modules/screen/activity'
 import styles from './styles.module.css'
 import Card from '../screen/card';
 import Shop from '../screen/shop';
@@ -18,6 +19,10 @@ const screenRoutes = [
   {
     screen: SCREEN_ENUM.HOME,
     component: <Home />
+  },
+  {
+    screen: SCREEN_ENUM.ACTIVITY,
+    component: <Activity />
   },
   {
     screen: SCREEN_ENUM.TUTORIAL,

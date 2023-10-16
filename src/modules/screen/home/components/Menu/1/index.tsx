@@ -24,6 +24,7 @@ const menuSetting: MENU_SETTING[] = [
   {
     name: 'Activity',
     icon: ICON_1_ENUM.ACTIVITY,
+    screen: SCREEN_ENUM.ACTIVITY
   },
   {
     name: 'Daily task',

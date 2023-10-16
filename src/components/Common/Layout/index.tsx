@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import styles from './styles.module.css'
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/types';
@@ -10,6 +10,12 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
 
   const { width, height } = useSelector((state: RootState) => state?.window);
+
+  const [scaleContainer, setScaleContainer] = useState(0)
+
+  useEffect(() => {
+    setScaleContainer(width / (width / 1.777777) - 0.037)
+  }, [width])
 
   const handleSizeContainer = () => {
     if (width / 1.777777 < height) {
@@ -49,7 +55,7 @@ const Layout: React.FC<Props> = ({ children }) => {
           <div
             className={`${styles.content}`}
             style={{
-              '--scale': width / (width / 1.777777) - 0.037
+              '--scale': scaleContainer
             } as any}
           >
             <div className={`${styles.bodyGame}`}>
