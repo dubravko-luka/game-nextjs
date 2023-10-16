@@ -14,7 +14,6 @@
   box-sizing: border-box;
   padding: 43px;
   perspective: 1100px;
-  -webkit-box-reflect: below 10px linear-gradient(transparent 50%, rgba(0, 0, 0, 0.4));
 }
 
 .frame:after {
