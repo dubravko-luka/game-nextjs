@@ -7,6 +7,7 @@ export enum SCREEN_ENUM {
   CARD = "CARD",
   SHOP = "SHOP",
   ACTIVITY = "ACTIVITY",
+  DAILY_TASK = "DAILY_TASK",
 }
 
 export enum MODE_GAME {

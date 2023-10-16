@@ -1,4 +1,6 @@
 export const imagesList = [
+  '/images/daily-task/hero.png',
+  '/images/daily-task/frame.png',
   '/images/home/background.jpeg',
   '/images/tutorial/cloud-4.png',
   '/images/tutorial/cloud-3.png',
@@ -31,6 +33,8 @@ export const imagesList = [
   '/images/player/avatar.png',
 ];
 export const imageListName = [
+  '/images/daily-task/hero.png',
+  '/images/daily-task/frame.png',
   '/images/home/background.jpeg',
   '/images/tutorial/cloud-4.png',
   '/images/tutorial/cloud-3.png',

@@ -1,0 +1,161 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.bg {
+  width: 30%;
+  height: 100%;
+  position: relative;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+}
+
+.imageFrame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.hero {
+  position: absolute;
+  top: -21px;
+  left: 135px;
+}
+
+.imageHero {
+  width: 335px;
+  transform: rotateY(180deg);
+}
+
+.bg .text {
+  position: absolute;
+  bottom: 90px;
+  left: 0;
+  width: 100%;
+}
+
+.bg .text .title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #daab00;
+}
+
+.bg .text .progress {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 32px;
+  color: #FFC700;
+  font-weight: bold;
+}
+
+.container {
+  width: 70%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.mission {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 134.13px;
+  background: rgb(209 196 185);
+  border-radius: 5px;
+  border: 3px solid #6E431D;
+}
+
+.mission .detail {
+  width: 80%;
+  height: 100%;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+.mission .detail .wrapReward {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.mission .detail .wrapReward:before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(142, 142, 142, 0.00) 0%, #8E8E8E 48.44%, rgba(142, 142, 142, 0.00) 100%);
+}
+
+.mission .detail .reward {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mission .detail .reward .rewardNumber {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.mission .detail .reward .imgReward {
+  width: 40px;
+}
+
+.detailTextMission {
+  color: #000;
+  font-size: 28px;
+}
+
+.mission .action {
+  width: 20%;
+  background: rgb(237 236 233);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress {
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.goDoneMission {
+  margin-top: 10px;
+  text-align: center;
+  color: #000;
+  width: 150px;
+  background: #2A60A6;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}

@@ -44,3 +44,20 @@ done
 echo "];" >> "$outputFile"
 
 echo "Images list has been generated and saved to $outputFile"
+
+# Generate version
+
+outputFileContants="./src/constants/load-image-data-version.ts"
+
+# Remove the loadimage-data-version.ts file if it exists
+if [ -f "$outputFileContants" ]; then
+  rm "$outputFileContants"
+fi
+
+random_string=$(openssl rand -base64 10 | tr -d '+/=')
+
+echo $random_string;
+
+echo "export const VERSION = '$random_string';" >> "$outputFileContants"
+
+echo "Constant version saved to $outputFileContants"

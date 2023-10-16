@@ -11,6 +11,7 @@ const CollectSupperRareCards: React.FC<Props> = () => {
     <>
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.content}`}>
+          <div className={`${styles.frame}`}></div>
           <div className={`${styles.items}`}>
             {
               ["blessing", 'hel', 'mage', 'surtur', 'takeit'].map((item, index) => (

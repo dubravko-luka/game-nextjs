@@ -29,15 +29,12 @@ const menuSetting: MENU_SETTING[] = [
   {
     name: 'Daily task',
     icon: ICON_1_ENUM.DAILY_TASK,
+    screen: SCREEN_ENUM.DAILY_TASK
   },
   {
     name: 'Card',
     icon: ICON_1_ENUM.CARD,
     screen: SCREEN_ENUM.CARD
-  },
-  {
-    name: 'Achievement',
-    icon: ICON_1_ENUM.ACHIEVEMENT,
   },
   {
     name: 'Knapsack',

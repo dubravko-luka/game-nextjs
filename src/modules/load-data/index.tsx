@@ -5,11 +5,13 @@ import { clearAllDataImage, getFullImage, getObjectStoreKeys, openDB, saveImageT
 import React, { memo, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './styles.module.css'
-import { VERSION } from '@/constants';
+import { VERSION } from '@/constants/load-image-data-version';
 
 type Props = {
   setLoaded: any
 }
+
+const key_localstorage_image = "ver.image"
 
 const LoadData: React.FC<Props> = ({ setLoaded }) => {
 
@@ -51,7 +53,7 @@ const LoadData: React.FC<Props> = ({ setLoaded }) => {
           }
           if (images.length === imageListName.length) {
             dispatch(setImages(images));
-            localStorage.setItem('ver.', VERSION);
+            localStorage.setItem(key_localstorage_image, VERSION);
             setLoaded(true)
           }
         };
@@ -66,12 +68,12 @@ const LoadData: React.FC<Props> = ({ setLoaded }) => {
   const handleGetAllImage = async () => {
     const images: IIndexedDbImage[] = await getFullImage();
     dispatch(setImages(images));
-    localStorage.setItem('ver.', VERSION);
+    localStorage.setItem(key_localstorage_image, VERSION);
     setLoaded(true)
   }
 
   const handleImageLoad = async () => {
-    const ver = localStorage.getItem("ver.");
+    const ver = localStorage.getItem(key_localstorage_image);
     if (ver !== VERSION) {
       handleSaveImageToDB()
     } else {

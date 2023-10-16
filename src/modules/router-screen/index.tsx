@@ -10,6 +10,7 @@ import Activity from '@/modules/screen/activity'
 import styles from './styles.module.css'
 import Card from '../screen/card';
 import Shop from '../screen/shop';
+import DailyTask from '../screen/daily-task';
 
 type Props = {
   //
@@ -27,6 +28,10 @@ const screenRoutes = [
   {
     screen: SCREEN_ENUM.TUTORIAL,
     component: <Tutorial />
+  },
+  {
+    screen: SCREEN_ENUM.DAILY_TASK,
+    component: <DailyTask />
   },
   {
     screen: SCREEN_ENUM.SHOP,
