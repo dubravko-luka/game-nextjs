@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import Map from '@/modules/screen/tutorial/components/map'
 import styles from './styles.module.css'
+import Map from '../map';
 
 type Props = {
   //

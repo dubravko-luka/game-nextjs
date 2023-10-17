@@ -1,0 +1,13 @@
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#svg {
+  width: 100%;
+}
+
+#circle {
+  transform-box: fill-box;
+}

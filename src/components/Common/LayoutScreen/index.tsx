@@ -8,7 +8,7 @@ type Props = {
 const LayoutScreen: React.FC<Props> = ({ children }) => {
   return (
     <>
-
+      <div className={`${styles.main}`}></div>
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.content}`}>
           {children}

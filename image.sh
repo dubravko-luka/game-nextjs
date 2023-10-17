@@ -56,8 +56,6 @@ fi
 
 random_string=$(openssl rand -base64 10 | tr -d '+/=')
 
-echo $random_string;
-
 echo "export const VERSION = '$random_string';" >> "$outputFileContants"
 
 echo "Constant version saved to $outputFileContants"

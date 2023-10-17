@@ -5,7 +5,7 @@ type Props = {
   //
 };
 
-const RankedScreen: React.FC<Props> = () => {
+const TutorialScreen: React.FC<Props> = () => {
   return (
     <>
       <Home />
@@ -13,4 +13,4 @@ const RankedScreen: React.FC<Props> = () => {
   );
 };
 
-export default memo(RankedScreen);
+export default memo(TutorialScreen);
