@@ -1,0 +1,139 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 50px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.top {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.top::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(100, 135, 207, 0.00) 0%, rgba(100, 135, 207, 0.30) 100%);
+}
+
+.user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.infoBasic {
+  /*  */
+}
+
+.avatar {
+  width: 200px;
+  border: 3px solid #FFC700;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.name p._name {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.level p._level {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.iconRank {
+  width: 150px;
+}
+
+.bottom {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.bottom::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(218, 74, 74, 0.30) 0%, rgba(218, 74, 74, 0.00) 100%);
+}
+
+.enemy {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.startBtn {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(46deg, #FFC800 18.92%, rgba(255, 200, 0, 0.50) 50.18%, #FFC800 84.15%);
+}

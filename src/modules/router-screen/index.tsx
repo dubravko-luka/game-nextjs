@@ -12,6 +12,7 @@ import Card from '../screen/card';
 import Shop from '../screen/shop';
 import DailyTask from '../screen/daily-task';
 import Ranked from '../screen/ranked';
+import Pvp from '../screen/pvp';
 
 type Props = {
   //
@@ -25,6 +26,10 @@ const screenRoutes = [
   {
     screen: SCREEN_ENUM.RANKED,
     component: <Ranked />
+  },
+  {
+    screen: SCREEN_ENUM.PVP,
+    component: <Pvp />
   },
   {
     screen: SCREEN_ENUM.ACTIVITY,

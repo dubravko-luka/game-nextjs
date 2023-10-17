@@ -30,6 +30,7 @@ export const imagesList = [
   '/images/items/mystery-box.gif',
   '/images/items/gemstone.png',
   '/images/items/pack-card.png',
+  '/images/pvp/vs-line.png',
   '/images/test.svg',
   '/images/player/avatar.png',
 ];
@@ -65,6 +66,7 @@ export const imageListName = [
   '/images/items/mystery-box.gif',
   '/images/items/gemstone.png',
   '/images/items/pack-card.png',
+  '/images/pvp/vs-line.png',
   '/images/test.svg',
   '/images/player/avatar.png',
 ];
