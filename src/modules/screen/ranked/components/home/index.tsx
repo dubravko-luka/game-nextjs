@@ -24,6 +24,39 @@ const HomeRanked: React.FC<Props> = () => {
       <LayoutScreen>
         <div className={`${styles.wrapper}`}>
           <div className={`${styles.content}`}>
+            <div className={`${styles.wrapUser}`}>
+              <div className={`${styles.user}`}>
+                <div className={`${styles.season}`}>
+                  <span className={`${styles._season}`}>
+                    S
+                    <span>10</span>
+                  </span>
+                  <span className={`${styles._seasonTime}`}>
+                    <p>Season deadline</p>
+                    <p>01/01/2023</p>
+                  </span>
+                </div>
+                <div className={`${styles.contentUser}`}>
+                  <div className={`${styles.avatar}`}>
+                    <Image option={{ className: styles._avatar }} name='/images/player/avatar.png' />
+                    <div className={`${styles.frameAvatar}`}>
+                      <FrameAvatar />
+                    </div>
+                  </div>
+                  <div className={`${styles.point}`}>
+                    <p className={`${styles._point}`}>
+                      1206
+                      <span> / 1500</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className={`${styles.startBtn}`}>
+                  <button className={styles._startBtn}>START</button>
+                </div>
+              </div>
+            </div>
+
             <div className={`${styles.ranked}`}>
               <div className={`${styles._ranked}`}>
                 <div className={`${styles.iconRank}`}>
@@ -68,38 +101,6 @@ const HomeRanked: React.FC<Props> = () => {
                       <span className={`${styles.detailTextSpec} ${styles.detailRankDetailLineParam}`}>355</span> Chips
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.wrapUser}`}>
-              <div className={`${styles.user}`}>
-                <div className={`${styles.season}`}>
-                  <span className={`${styles._season}`}>
-                    S
-                    <span>10</span>
-                  </span>
-                  <span className={`${styles._seasonTime}`}>
-                    <p>Season deadline</p>
-                    <p>01/01/2023</p>
-                  </span>
-                </div>
-                <div className={`${styles.contentUser}`}>
-                  <div className={`${styles.avatar}`}>
-                    <Image option={{ className: styles._avatar }} name='/images/player/avatar.png' />
-                    <div className={`${styles.frameAvatar}`}>
-                      <FrameAvatar />
-                    </div>
-                  </div>
-                  <div className={`${styles.point}`}>
-                    <p className={`${styles._point}`}>
-                      1206
-                      <span> / 1500</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className={`${styles.startBtn}`}>
-                  <button className={styles._startBtn}>START</button>
                 </div>
               </div>
             </div>
