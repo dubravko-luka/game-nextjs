@@ -6,6 +6,7 @@ import imageReducer from './reducers/imageReducer';
 import knapsackReducer from './reducers/knapsackReducer';
 import cardReducer from './reducers/cardReducer';
 import shopReducer from './reducers/shopReducer';
+import mailboxReducer from './reducers/mailboxReducer';
 
 const rootReducer = combineReducers({
   window: windowReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   knapsack: knapsackReducer,
   card: cardReducer,
   shop: shopReducer,
+  mailbox: mailboxReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

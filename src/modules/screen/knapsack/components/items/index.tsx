@@ -10,32 +10,32 @@ type Props = {
   //
 };
 
-const card_fragments = [
-  {
-    id: 0,
+const card_fragments = [0, 1, 2, 3].map((item, index) => {
+  return {
+    id: item,
     type: 0,
     name: "Puzzle piece MAX",
     src: '/images/player/avatar.png'
   }
-]
+})
 
-const items = [
-  {
-    id: 0,
+const items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => {
+  return {
+    id: item,
     type: 1,
     name: "Gemstone",
     src: '/images/items/gemstone.png'
   }
-]
+})
 
-const gift_bags = [
-  {
-    id: 0,
+const gift_bags = [0, 1, 2, 3, 4, 5].map((item, index) => {
+  return {
+    id: item,
     type: 2,
     name: "Pack Card",
     src: '/images/items/pack-card.png'
   }
-]
+})
 
 const all = [
   ...card_fragments,
@@ -67,35 +67,37 @@ const Iterms: React.FC<Props> = () => {
     <>
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.wrapItems}`}>
-          <div className={`${styles.items}`}>
-            {
-              tabActive === KNAPSACK_ENUM_TAB.ALL && all.map((item, index) => (
-                <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
-                  <Image option={{ className: styles.imgItem }} name={item?.src} />
-                </div>
-              ))
-            }
-            {
-              tabActive === KNAPSACK_ENUM_TAB.CARD_FRAGMENT && card_fragments.map((item, index) => (
-                <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
-                  <Image option={{ className: styles.imgItem }} name={item?.src} />
-                </div>
-              ))
-            }
-            {
-              tabActive === KNAPSACK_ENUM_TAB.ITEMS && items.map((item, index) => (
-                <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
-                  <Image option={{ className: styles.imgItem }} name={item?.src} />
-                </div>
-              ))
-            }
-            {
-              tabActive === KNAPSACK_ENUM_TAB.GIFT_BAG && gift_bags.map((item, index) => (
-                <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
-                  <Image option={{ className: styles.imgItem }} name={item?.src} />
-                </div>
-              ))
-            }
+          <div className={`${styles.content} no-sb`}>
+            <div className={`${styles.items}`}>
+              {
+                tabActive === KNAPSACK_ENUM_TAB.ALL && all.map((item, index) => (
+                  <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
+                    <Image option={{ className: styles.imgItem }} name={item?.src} />
+                  </div>
+                ))
+              }
+              {
+                tabActive === KNAPSACK_ENUM_TAB.CARD_FRAGMENT && card_fragments.map((item, index) => (
+                  <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
+                    <Image option={{ className: styles.imgItem }} name={item?.src} />
+                  </div>
+                ))
+              }
+              {
+                tabActive === KNAPSACK_ENUM_TAB.ITEMS && items.map((item, index) => (
+                  <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
+                    <Image option={{ className: styles.imgItem }} name={item?.src} />
+                  </div>
+                ))
+              }
+              {
+                tabActive === KNAPSACK_ENUM_TAB.GIFT_BAG && gift_bags.map((item, index) => (
+                  <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
+                    <Image option={{ className: styles.imgItem }} name={item?.src} />
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </div>
         <Detail item={itemSelect} />

@@ -8,6 +8,7 @@ export enum SCREEN_ENUM {
   SHOP = "SHOP",
   ACTIVITY = "ACTIVITY",
   DAILY_TASK = "DAILY_TASK",
+  MAILBOX = "MAILBOX",
 }
 
 export enum MODE_GAME {
@@ -49,6 +50,8 @@ export enum ICON_1_ENUM {
   //
 
   LETTER = `[0, 6]`,
+  LETTER_OPENED = `[1, 6]`,
+  LETTER_NOT_OPEN = `[2, 6]`,
 }
 
 export enum ICON_2_ENUM {
@@ -80,4 +83,10 @@ export enum SHOP_ENUM_TAB {
   HERO = "HERO",
   CARD = "CARD",
   MYSTERY_BOX = "MYSTERY_BOX",
+}
+
+export enum MAILBOX_ENUM_TAB {
+  SYSTEM = "SYSTEM",
+  NEWS = "NEWS",
+  GIFTS = "GIFTS",
 }
