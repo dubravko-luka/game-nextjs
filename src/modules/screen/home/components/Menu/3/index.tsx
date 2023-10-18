@@ -1,17 +1,24 @@
 import React, { memo } from 'react';
 import styles from './styles.module.css'
 import Icon from '@/components/Icons/1'
-import { ICON_1_ENUM } from '@/types/enum';
+import { ICON_1_ENUM, SCREEN_ENUM } from '@/types/enum';
+import { useDispatch } from 'react-redux';
+import { setScreen } from '@/store/actions/screenAction';
 
 type Props = {
   //
 };
 
 const MenuHome: React.FC<Props> = () => {
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className={`${styles.wrapper}`}>
-        <Icon icon={ICON_1_ENUM.LETTER} />
+        <div onClick={() => dispatch(setScreen(SCREEN_ENUM.MAILBOX))}>
+          <Icon icon={ICON_1_ENUM.LETTER} />
+        </div>
         <Icon icon={ICON_1_ENUM.SETTING} />
       </div>
     </>
