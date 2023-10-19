@@ -74,7 +74,7 @@ const RouterScreen: React.FC<Props> = () => {
         screenRoutes?.map((item, index) => {
           if (item?.screen === screen) {
             return (
-              <div key={index} className={styles.wrapper}>
+              <div key={index} className={`${styles.wrapper} screen-main`}>
                 {item?.component}
               </div>
             )
@@ -82,7 +82,11 @@ const RouterScreen: React.FC<Props> = () => {
         })
       }
       {
-        settingShow && <SettingScreen />
+        settingShow && (
+          <div className={`${styles.setting} screen-popup`}>
+            <SettingScreen />
+          </div>
+        )
       }
     </>
   );

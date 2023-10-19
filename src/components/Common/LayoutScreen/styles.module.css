@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   z-index: -1;
-  background: linear-gradient(46deg, rgba(49, 96, 31, 0.00) 18.92%, rgba(49, 96, 31, 0.40) 50.18%, rgba(49, 96, 31, 0.00) 84.15%);
+  background: var(--backgroundLayout);
   height: 100%;
   width: 100%;
 }

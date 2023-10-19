@@ -6,6 +6,7 @@ import { ICON_1_ENUM } from '@/types/enum';
 import { useDispatch } from 'react-redux';
 import { setShow } from '@/store/actions/settingAction';
 import InputRange from '@/components/InputRange';
+import { Helmet } from 'react-helmet';
 
 type Props = {
   //
@@ -17,6 +18,13 @@ const SettingScreen: React.FC<Props> = () => {
 
   return (
     <>
+      <Helmet>
+        <style>{`
+          .screen-main {
+            z-index: -1;
+          }
+        `}</style>
+      </Helmet>
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.content}`}>
           <div className={`${styles.header}`} onClick={() => dispath(setShow(false))}>
