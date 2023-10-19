@@ -11,7 +11,7 @@ const TutorialScreen_1: React.FC<Props> = () => {
     <>
       <div className={`${styles.wrapper}`}>
         <div className={`${styles.wrapMap}`}>
-          <Image name='/images/play/map.png' />
+          <Image option={{ className: styles.mapImage }} name='/images/play/map.png' />
         </div>
       </div>
     </>
