@@ -3,6 +3,7 @@ export enum SCREEN_ENUM {
   RANKED = "RANKED",
   PVP = "PVP",
   TUTORIAL = "TUTORIAL",
+  TUTORIAL_1 = "TUTORIAL_1",
   KNAPSACK = "KNAPSACK",
   CARD = "CARD",
   SHOP = "SHOP",

@@ -4,6 +4,7 @@ import _ from 'lodash';
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import Tutorial from '@/modules/screen/tutorial'
+import Tutorial_1 from '@/modules/screen/tutorial/screen/1'
 import Home from '@/modules/screen/home'
 import Knapsack from '@/modules/screen/knapsack'
 import MailBox from '@/modules/screen/mailbox'
@@ -20,7 +21,19 @@ type Props = {
   //
 };
 
+const screenTutorial = [
+  {
+    screen: SCREEN_ENUM.TUTORIAL,
+    component: <Tutorial />
+  },
+  {
+    screen: SCREEN_ENUM.TUTORIAL_1,
+    component: <Tutorial_1 />
+  },
+]
+
 const screenRoutes = [
+  ...screenTutorial,
   {
     screen: SCREEN_ENUM.HOME,
     component: <Home />
@@ -36,10 +49,6 @@ const screenRoutes = [
   {
     screen: SCREEN_ENUM.ACTIVITY,
     component: <Activity />
-  },
-  {
-    screen: SCREEN_ENUM.TUTORIAL,
-    component: <Tutorial />
   },
   {
     screen: SCREEN_ENUM.DAILY_TASK,
