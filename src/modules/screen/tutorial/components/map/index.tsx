@@ -35,7 +35,8 @@ interface IMap {
   name: string,
   type: MAP_ENUM,
   class: any,
-  level: LEVEL_ENUM
+  level: LEVEL_ENUM,
+  screen?: SCREEN_ENUM
 }
 
 const map: IMap[] = [
@@ -46,7 +47,7 @@ const map: IMap[] = [
     name: 'God',
     type: MAP_ENUM?.GOD,
     class: styles.mapGod,
-    level: LEVEL_ENUM.NORMAL
+    level: LEVEL_ENUM.NORMAL,
   },
   {
     id: 1,
@@ -73,7 +74,8 @@ const map: IMap[] = [
     name: 'Undead',
     type: MAP_ENUM?.UNDEAD,
     class: styles.mapUndead,
-    level: LEVEL_ENUM.EASY
+    level: LEVEL_ENUM.EASY,
+    screen: SCREEN_ENUM.TUTORIAL_1,
   }
 ]
 
@@ -84,6 +86,7 @@ const Map: React.FC<Props> = () => {
   const [currentMap, setCurrentMap] = useState(_.find(map, { id: 1 }));
   const [hoverIndex, setHoverIndex] = useState(-1);
   const [isLandSelect, seIsLandSelect] = useState<IMap | any>(null);
+  const dispatch = useDispatch();
 
   const handleClickMap = (item: IMap) => {
     seIsLandSelect(item)
@@ -168,7 +171,7 @@ const Map: React.FC<Props> = () => {
               </p>
               <p className={styles.text}>Perspiciatis voluptatum blanditiis eos rem a molestiae ut labore, perferendis culpa id voluptas suscipit fugiat, nesciunt iusto provident cumque quaerat unde facilis! Delectus inventore debitis enim repudiandae unde, quo fugiat?</p>
             </div>
-            <button className={styles.btnStart}>START</button>
+            <button className={styles.btnStart} onClick={() => dispatch(setScreen(isLandSelect?.screen))}>START</button>
           </div>
         </div>
       </div>

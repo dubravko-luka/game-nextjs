@@ -1,4 +1,6 @@
+import { AllyState } from './allyTypes';
 import { CardState } from './cardTypes';
+import { EnemyState } from './enemyTypes';
 import { ImageState } from './imageTypes';
 import { KnapsackState } from './knapsackTypes';
 import { MailboxState } from './mailboxTypes';
@@ -16,4 +18,6 @@ export interface RootState {
   shop: ShopState;
   mailbox: MailboxState;
   setting: SettingState;
+  ally: AllyState;
+  enemy: EnemyState;
 }

@@ -8,6 +8,8 @@ import cardReducer from './reducers/cardReducer';
 import shopReducer from './reducers/shopReducer';
 import mailboxReducer from './reducers/mailboxReducer';
 import settingReducer from './reducers/settingReducer';
+import allyReducer from './reducers/allyReducer';
+import enemyReducer from './reducers/enemyReducer';
 
 const rootReducer = combineReducers({
   window: windowReducer,
@@ -18,6 +20,8 @@ const rootReducer = combineReducers({
   shop: shopReducer,
   mailbox: mailboxReducer,
   setting: settingReducer,
+  ally: allyReducer,
+  enemy: enemyReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

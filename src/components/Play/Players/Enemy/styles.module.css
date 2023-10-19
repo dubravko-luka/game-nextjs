@@ -1,0 +1,10 @@
+.wrapperPlayer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 63px;
+  position: absolute;
+  top: var(--top);
+  left: 50%;
+  transform: translateX(-50%);
+}

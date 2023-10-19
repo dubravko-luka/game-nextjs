@@ -91,3 +91,16 @@ export enum MAILBOX_ENUM_TAB {
   NEWS = "NEWS",
   GIFTS = "GIFTS",
 }
+
+
+export enum PLAYER_ENUM {
+  PLAYER_1 = "PLAYER_1",
+  PLAYER_2 = "PLAYER_2"
+}
+
+export enum position_card {
+  TOP_ENEMY = -403,
+  TOP_ENEMY_MAIN = -427,
+  TOP_ALLY = 404,
+  TOP_ALLY_MAIN = 381,
+}
