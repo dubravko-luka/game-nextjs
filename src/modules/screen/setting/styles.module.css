@@ -1,0 +1,113 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--zIndexSetting);
+  background: #000;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 50px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.contentSetting {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  width: 100%;
+}
+
+.column {
+  width: 100%;
+}
+
+.titleSetting {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.inputRange {
+  width: 350px;
+}
+
+.nameInGameInput {
+  width: 400px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: no-repeat;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--colorMain);
+}
+
+.buttonLanguage {
+  width: 70px;
+  height: 50px;
+  margin: 0px 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--colorMain);
+  border: 3px solid #FFC700;
+  border-radius: 10px;
+  position: relative;
+  opacity: .7;
+  filter: grayscale(100);
+}
+
+.buttonLanguage.buttonLanguageActive {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.buttonLanguage::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  right: 3px;
+  border-bottom: 15px solid #ffc700;
+  border-left: 20px solid #ffc70000;
+  border-right: 20px solid #ffc70000;
+}
+
+.buttonLanguage::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 3px;
+  border-top: 15px solid #ffc700;
+  border-left: 20px solid #ffc70000;
+  border-right: 20px solid #ffc70000;
+}

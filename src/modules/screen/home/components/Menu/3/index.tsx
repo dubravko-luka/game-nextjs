@@ -4,6 +4,7 @@ import Icon from '@/components/Icons/1'
 import { ICON_1_ENUM, SCREEN_ENUM } from '@/types/enum';
 import { useDispatch } from 'react-redux';
 import { setScreen } from '@/store/actions/screenAction';
+import { setShow } from '@/store/actions/settingAction';
 
 type Props = {
   //
@@ -19,7 +20,9 @@ const MenuHome: React.FC<Props> = () => {
         <div onClick={() => dispatch(setScreen(SCREEN_ENUM.MAILBOX))}>
           <Icon icon={ICON_1_ENUM.LETTER} />
         </div>
-        <Icon icon={ICON_1_ENUM.SETTING} />
+        <div onClick={() => dispatch(setShow(true))}>
+          <Icon icon={ICON_1_ENUM.SETTING} />
+        </div>
       </div>
     </>
   );

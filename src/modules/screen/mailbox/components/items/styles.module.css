@@ -69,6 +69,7 @@
   align-items: center;
   justify-content: center;
   width: 10%;
+  overflow: hidden;
 }
 
 .icon>div {

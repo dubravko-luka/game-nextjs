@@ -55,7 +55,7 @@ const Iterms: React.FC<Props> = () => {
             <div className={`${styles.items}`}>
               {
                 tabActive === MAILBOX_ENUM_TAB.SYSTEM && system.map((item, index) => (
-                  <div key={index} className={`${styles.item} ${itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
+                  <div key={index} className={`${styles.item} ${itemSelect?.id === item.id && itemSelect?.type === item.type ? styles.active : ''}`} onClick={() => setItemSelect(item)}>
                     <div className={`${styles.icon}`}>
                       <Icon icon={ICON_1_ENUM.LETTER_OPENED} />
                     </div>
