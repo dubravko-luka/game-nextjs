@@ -15,7 +15,6 @@ import Shop from '../screen/shop';
 import DailyTask from '../screen/daily-task';
 import Ranked from '../screen/ranked';
 import Pvp from '../screen/pvp';
-import SettingScreen from '../screen/setting'
 
 type Props = {
   //
@@ -75,7 +74,6 @@ const screenRoutes = [
 const RouterScreen: React.FC<Props> = () => {
 
   const { screen } = useSelector((state: RootState) => state?.screen);
-  const settingShow = useSelector((state: RootState) => state?.setting.show);
 
   return (
     <>
@@ -89,13 +87,6 @@ const RouterScreen: React.FC<Props> = () => {
             )
           }
         })
-      }
-      {
-        settingShow && (
-          <div className={`${styles.setting} screen-popup`}>
-            <SettingScreen />
-          </div>
-        )
       }
     </>
   );

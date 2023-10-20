@@ -8,3 +8,72 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+/* Card Reserves */
+
+.cardReserves {
+  position: absolute;
+  top: -268px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardReserveWrap {
+  width: 148px;
+  height: 190px;
+  position: relative;
+  margin-left: -48px;
+  z-index: 1;
+  transition: all .3s linear;
+  /* border: 1px solid; */
+}
+
+.cardReserveWrap:first-child {
+  margin-left: 0;
+}
+
+.imageReserve {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* UNKNOWN CARD */
+
+.unknownCard {
+  position: absolute;
+  width: 148px;
+  height: 190px;
+  left: -11px;
+  top: -126px;
+}
+
+.unknownCardContent {
+  /* border: 1px solid; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* MANA */
+.manaWrap {
+  position: absolute;
+  bottom: calc(50% + 50px);
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 94, 255, 0.7);
+  box-shadow: -4px 4px 5px 5px rgb(0, 0, 0, .4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textMana {
+  font-size: 28px;
+  font-weight: bold;
+}

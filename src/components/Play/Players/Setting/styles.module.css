@@ -1,0 +1,27 @@
+.wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttonSurrender {
+  width: 300px;
+  height: 70px;
+  background: rgba(192, 192, 192, 0.5);
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

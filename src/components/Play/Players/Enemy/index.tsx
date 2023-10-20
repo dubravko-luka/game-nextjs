@@ -6,6 +6,7 @@ import _ from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/types';
 import { setCardTargetSelected } from '@/store/actions/allyAction';
+import Image from '@/components/Image';
 
 type Props = {
 };
@@ -43,6 +44,38 @@ const Enemy: React.FC<Props> = () => {
             </div>
           ))
         }
+      </div>
+      {/* Card Reserve */}
+      <div
+        className={`${styles.cardReserves}`}
+      >
+        {
+          [1, 2, 3, 4]?.map((item, index) => (
+            <div
+              key={index}
+              className={`${styles.cardReserveWrap}`}
+            >
+              <Image
+                option={{ className: styles.imageReserve }}
+                name={'/images/play/back-card-enemy.png'}
+              />
+            </div>
+          ))
+        }
+      </div>
+      {/* Unknown card */}
+      <div className={`${styles.unknownCard}`}>
+        <div className={`${styles.unknownCardContent}`}>
+          <Image
+            option={{ className: styles.imageReserve }}
+            name={'/images/play/back-card.png'}
+          />
+        </div>
+      </div>
+
+      {/* Mana */}
+      <div className={`${styles.manaWrap}`}>
+        <p className={`${styles.textMana}`}>1/10</p>
       </div>
     </>
   );

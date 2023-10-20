@@ -14,6 +14,10 @@ export const cardDefault: ICardPlaying[] = [
 export const cardMainDefault: ICardMainPlaying[] = [
   {
     id: '',
-    src: ''
+    src: '/images/cards/hero/thomas.png'
+  },
+  {
+    id: '',
+    src: '/images/cards/hero/mei.png'
   },
 ]

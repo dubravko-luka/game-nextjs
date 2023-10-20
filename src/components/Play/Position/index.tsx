@@ -27,7 +27,9 @@ const Position: React.FC<Props> = ({ isMain = false, card, action, top = 0, sele
             '--scale': `${scale}`
           } as any}
         >
-          <Image option={{ className: styles.image }} name={card?.src ?? ''} />
+          {
+            card?.src && <Image option={{ className: styles.image }} name={card?.src ?? ''} />
+          }
         </div>
       </div>
     </>

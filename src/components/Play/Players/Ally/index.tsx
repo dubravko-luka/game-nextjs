@@ -166,6 +166,16 @@ const Ally: React.FC<Props> = () => {
           />
         </div>
       </div>
+
+      {/* Enturn */}
+      <div className={`${styles.btnEndturn}`}>
+        <button className={styles.endturnButton}>END TURN</button>
+      </div>
+
+      {/* Mana */}
+      <div className={`${styles.manaWrap}`}>
+        <p className={`${styles.textMana}`}>1/10</p>
+      </div>
     </>
   );
 };

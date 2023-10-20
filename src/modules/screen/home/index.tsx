@@ -5,7 +5,7 @@ import CamPaignIconPVP from './components/CampaignIcon/pvp'
 import CamPaignIconTutorial from './components/CampaignIcon/tutorial'
 import CamPaignIconRanked from './components/CampaignIcon/ranked'
 import { MODE_GAME, SCREEN_ENUM } from '@/types/enum';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setScreen } from '@/store/actions/screenAction';
 import _ from 'lodash';
 import MenuHomeLeft from '@/modules/screen/home/components/Menu/1'
@@ -13,6 +13,8 @@ import MenuHomeRight from '@/modules/screen/home/components/Menu/2'
 import MenuSetting from '@/modules/screen/home/components/Menu/3'
 import Player from '@/components/Player';
 import Image from '@/components/Image';
+import { RootState } from '@/store/types';
+import SettingScreen from '@/modules/screen/setting'
 
 type Props = {
   //
@@ -43,6 +45,8 @@ const HomeScreen: React.FC<Props> = () => {
 
   const [mode, setMode] = useState<number>(0)
   const dispath = useDispatch()
+
+  const settingShow = useSelector((state: RootState) => state?.setting.show);
 
   return (
     <>
@@ -103,6 +107,12 @@ const HomeScreen: React.FC<Props> = () => {
           <ButtonRight />
         </div>
       </div>
+
+      {
+        settingShow && (
+          <SettingScreen />
+        )
+      }
     </>
   );
 };

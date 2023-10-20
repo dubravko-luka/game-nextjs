@@ -23,6 +23,10 @@ const initialState: AllyState = {
     {
       id: '1',
       src: '/images/cards/hel.png'
+    },
+    {
+      id: '1',
+      src: '/images/cards/jormungandr.png'
     }
   ],
 };
