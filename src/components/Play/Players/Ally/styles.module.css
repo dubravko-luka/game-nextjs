@@ -28,6 +28,7 @@
   margin-left: -48px;
   z-index: 1;
   transition: all .3s linear;
+  border: 1px solid;
 }
 
 .cardReserveWrap:first-child {
@@ -43,4 +44,21 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.unknownCard {
+  position: absolute;
+  width: 148px;
+  height: 190px;
+  right: 78px;
+  bottom: -131px;
+  perspective: 800px;
+}
+
+.unknownCardContent {
+  border: 1px solid;
+  transform: rotateX(-17deg) skewX(-17deg);
+  width: 100%;
+  height: 100%;
+  position: relative;
 }

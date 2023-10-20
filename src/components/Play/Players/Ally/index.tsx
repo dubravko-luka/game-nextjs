@@ -134,6 +134,7 @@ const Ally: React.FC<Props> = () => {
           ))
         }
       </div>
+      {/* Card Reserve */}
       <div
         className={`${styles.cardReserves}`}
         ref={refCardReserve}
@@ -155,6 +156,15 @@ const Ally: React.FC<Props> = () => {
             </div>
           ))
         }
+      </div>
+      {/* Unknown card */}
+      <div className={`${styles.unknownCard}`}>
+        <div className={`${styles.unknownCardContent}`}>
+          <Image
+            option={{ className: styles.imageReserve }}
+            name={'/images/play/back-card.png'}
+          />
+        </div>
       </div>
     </>
   );

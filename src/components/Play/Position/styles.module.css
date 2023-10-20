@@ -9,40 +9,12 @@
   z-index: 2;
 }
 
-@keyframes selected {
-  0% {
-    background: rgb(255, 199, .7);
-    box-shadow: 0px 0px 10px 16px rgb(255, 199, .7);
-  }
-
-  100% {
-    background: rgb(255, 199, .7);
-    box-shadow: 0px 0px 10px 24px rgb(255, 199, .7);
-  }
-}
-
-.card.selected::before {
-  content: '';
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 75%;
-  height: 68%;
-  z-index: -1;
-  animation: selected 1s linear infinite alternate;
-}
-
 .card.selected .cardContent {
   transform: scale(1.1);
 }
 
 .card.selected .cardContent.action {
   transform: scale(1);
-}
-
-.card.selected .cardContent:before {
-  content: unset;
 }
 
 .cardContent {
@@ -60,15 +32,36 @@
     left: 0px;
   }
 
-  40% {
+  15% {
     transform: scale(1.5);
   }
 
-  50%,
-  70% {
+  30% {
+    top: var(--top);
+    left: var(--left);
+  }
+
+  40% {
+    top: var(--top);
+    left: var(--left);
+    transform: scale(1.7);
+  }
+
+  50% {
     top: var(--top);
     left: var(--left);
     transform: scale(var(--scale));
+  }
+
+  70% {
+    transform: scale(1.5);
+    top: var(--top);
+    left: var(--left);
+  }
+
+  90% {
+    top: 0px;
+    left: 0px;
   }
 
   100% {
