@@ -8,3 +8,39 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.cardReserves {
+  position: absolute;
+  bottom: -268px;
+  left: 50%;
+  transform: translateX(-50%);
+  perspective: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardReserveWrap {
+  width: 148px;
+  height: 190px;
+  position: relative;
+  transform: rotateX(-20deg);
+  margin-left: -48px;
+  z-index: 1;
+  transition: all .3s linear;
+}
+
+.cardReserveWrap:first-child {
+  margin-left: 0;
+}
+
+.cardReserveWrap.selected {
+  transform: rotateX(-20deg) translateY(-76px);
+  z-index: 2;
+}
+
+.imageReserve {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

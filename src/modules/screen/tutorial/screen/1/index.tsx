@@ -1,9 +1,7 @@
 import React, { memo } from 'react';
 import styles from './styles.module.css'
 import Image from '@/components/Image';
-import Position from '@/components/Play/Position';
 import Players from '@/components/Play/Players';
-import { PLAYER_ENUM } from '@/types/enum';
 
 type Props = {
   //

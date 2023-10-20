@@ -35,8 +35,8 @@ const Enemy: React.FC<Props> = () => {
         {
           [card_1, card_2, card_main, card_3, card_4].map((item, index) => (
             <div key={index} onClick={() => {
-              if (card_selected !== -1 && card_target_selected[1] === -1) {
-                dispatch(setCardTargetSelected([0, index]))
+              if (card_selected !== -1 && card_target_selected === -1 && item.src !== '') {
+                dispatch(setCardTargetSelected(index))
               }
             }}>
               <Position action={false} card={item} isMain={index === 2} />

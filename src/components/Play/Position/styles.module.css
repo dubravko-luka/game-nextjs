@@ -2,6 +2,11 @@
   width: 222px;
   border: 1px solid;
   position: relative;
+  z-index: 1;
+}
+
+.card.selected {
+  z-index: 2;
 }
 
 @keyframes selected {
@@ -28,6 +33,14 @@
   animation: selected 1s linear infinite alternate;
 }
 
+.card.selected .cardContent {
+  transform: scale(1.1);
+}
+
+.card.selected .cardContent.action {
+  transform: scale(1);
+}
+
 .card.selected .cardContent:before {
   content: unset;
 }
@@ -38,6 +51,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  transition: all .3s linear;
 }
 
 @keyframes move {
@@ -67,7 +81,7 @@
   animation: move 1s linear forwards;
 }
 
-.cardContent::before {
+.cardContent.shadow::before {
   content: '';
   position: absolute;
   bottom: 5px;

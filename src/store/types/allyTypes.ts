@@ -7,6 +7,9 @@ export const SET_ALLY_CARD_4 = 'SET_ALLY_CARD_4';
 export const SET_ALLY_CARD_MAIN = 'SET_ALLY_CARD_MAIN';
 export const SET_ALLY_CARD_INDEX_SELECTED = 'SET_ALLY_CARD_INDEX_SELECTED';
 export const SET_ALLY_CARD_TARGET_SELECTED = 'SET_ALLY_CARD_TARGET_SELECTED';
+export const SET_ALLY_CARD_RESERVE_SELECTED = 'SET_ALLY_CARD_RESERVE_SELECTED';
+export const SET_ALLY_CARD_RESERVE_TARGET_SELECTED = 'SET_ALLY_CARD_RESERVE_TARGET_SELECTED';
+export const SET_ALLY_CARD_RESERVE = 'SET_ALLY_CARD_RESERVE';
 
 export interface AllyState {
   card_1: ICardPlaying;
@@ -15,7 +18,11 @@ export interface AllyState {
   card_4: ICardPlaying;
   card_main: ICardMainPlaying;
   card_selected: number;
-  card_target_selected: number[];
+  card_target_selected: number;
+  card_reserve_selected: number;
+
+  card_reserve_target: number;
+  card_reserve: ICardPlaying[];
 }
 
 interface setCardOneAction {
@@ -50,7 +57,22 @@ interface setCardIndexSelectedAction {
 
 interface setCardTargetSelectedAction {
   type: typeof SET_ALLY_CARD_TARGET_SELECTED;
-  payload: number[];
+  payload: number;
 }
 
-export type AllyAction = setCardOneAction | setCardTwoAction | setCardThreeAction | setCardFourAction | setCardMainAction | setCardIndexSelectedAction | setCardTargetSelectedAction;
+interface setCardReserveSelectedAction {
+  type: typeof SET_ALLY_CARD_RESERVE_SELECTED;
+  payload: number;
+}
+
+interface setCardReserveTargetSelectedAction {
+  type: typeof SET_ALLY_CARD_RESERVE_TARGET_SELECTED;
+  payload: number;
+}
+
+interface setCardReserveAction {
+  type: typeof SET_ALLY_CARD_RESERVE;
+  payload: ICardPlaying[];
+}
+
+export type AllyAction = setCardOneAction | setCardTwoAction | setCardThreeAction | setCardFourAction | setCardMainAction | setCardIndexSelectedAction | setCardTargetSelectedAction | setCardReserveSelectedAction | setCardReserveTargetSelectedAction | setCardReserveAction;

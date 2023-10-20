@@ -16,12 +16,11 @@ type Props = {
 
 const Position: React.FC<Props> = ({ isMain = false, card, action, top = 0, selected, option, left = 0, scale = 0 }) => {
 
-  console.log('---------->', left);
   return (
     <>
       <div className={`${styles.card} ${selected ? styles.selected : ''} ${isMain ? styles.wrapper_main : styles.wrapper}`} {...option}>
         <div
-          className={`${styles.cardContent} ${action ? styles.action : ''}`}
+          className={`${styles.cardContent} ${card?.src ? styles.shadow : ''} ${action ? styles.action : ''}`}
           style={{
             "--top": `${top}px`,
             '--left': `${left}%`,

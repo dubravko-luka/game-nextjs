@@ -7,33 +7,30 @@
 
 @keyframes animationMap {
   0% {
-    transform: rotateX(63deg) translateY(100px) translateX(-50%);
-    width: 100px;
+    transform: rotateX(63deg) translateY(-500px) translateX(-50%) scale(0.2);
   }
 
   20% {
-    transform: rotateX(63deg) translateY(-100px) translateX(-50%);
-    width: 836px;
+    transform: rotateX(63deg) translateY(-300px) translateX(-50%) scale(0.7);
   }
 
   60% {
-    transform: rotateX(63deg) translateY(-100px) translateX(-50%);
-    width: 836px;
+    transform: rotateX(63deg) translateY(-300px) translateX(-50%) scale(0.7);
   }
 
   100% {
-    transform: rotateX(20deg) translateY(-100px) translateX(-50%);
-    width: 1672px;
+    transform: rotateX(20deg) translateY(-100px) translateX(-50%) scale(1);
   }
 }
 
 .wrapMap {
   position: absolute;
-  top: 200px;
+  top: 100px;
   left: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: -1;
+  transform: translateX(-50%);
+  width: 1672px;
+  transform: rotateX(20deg) translateY(-100px) translateX(-50%) scale(1);
   animation: animationMap 5s linear forwards;
 }
 
@@ -58,6 +55,7 @@
 
 .mapImage {
   width: 100%;
+  transform: rotate(0deg);
   animation: animationMapImage 5s linear forwards;
 }
 
@@ -80,11 +78,11 @@
 
 .wrapPlay {
   position: absolute;
-  top: 200px;
+  top: 100px;
   left: 50%;
   width: 87%;
   height: 804px;
-  transform: rotateX(20deg) translateY(-100px) translateX(-50%);
+  transform: rotateX(20deg) translateY(-100px) translateX(-50%) scale(1);
   animation: appear 6s linear forwards;
 }
 
