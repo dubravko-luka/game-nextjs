@@ -55,7 +55,7 @@ const Skill: React.FC<PropsSkill> = ({ src, width = 221, height = 285, columns =
 					currentRows++;
 
 					// eslint-disable-next-line
-          currentFrame = 0;
+					currentFrame = 0;
 				}
 
 				if (currentRows < frameRows) {
@@ -71,7 +71,7 @@ const Skill: React.FC<PropsSkill> = ({ src, width = 221, height = 285, columns =
 
 	return (
 		<>
-			<canvas ref={canvasRef} width="222" height="285" className={styles.canvas}></canvas>
+			<canvas ref={canvasRef} width="222" height="285"></canvas>
 		</>
 	);
 };
@@ -86,10 +86,10 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
 			clearTimeout(timeOut);
 
 			// eslint-disable-next-line
-    }, columns * frameDelay);
+		}, columns * frameDelay + 200);
 
 		// eslint-disable-next-line
-  }, []);
+	}, []);
 
 	useEffect(() => {
 		const timeOut = setTimeout(() => {
@@ -99,10 +99,10 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
 			clearTimeout(timeOut);
 
 			// eslint-disable-next-line
-    }, columns * frameDelay + 1000);
+		}, columns * frameDelay + 2000);
 
 		// eslint-disable-next-line
-  }, []);
+	}, []);
 
 	return (
 		<>
@@ -124,18 +124,35 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
                 animation: shaking .3s linear;
                 z-index: -1;
               }
+
+							${
+								showMinus
+									? `
+									.skill-attack {
+										display: none;
+									}
+								`
+									: ``
+							}
             `}
 					</style>
 				</Helmet>
 			)}
-			<div className={`${styles.wrapper} ${styles.defense} skill-defense`}>
-				<Skill src={src} width={width} height={height} columns={columns} rows={rows} _scale={_scale} />
+			<div
+				style={
+					{
+						'--width': `${width}px`,
+						'--height': `${height}px`,
+					} as any
+				}
+				className={`${styles.wrapper} ${styles.defense} skill-defense`}
+			>
 				{showMinus ? (
 					<div className={`${styles.minus}`}>
 						<p className={`${styles._minus}`}>-5</p>
 					</div>
 				) : (
-					<></>
+					<Skill src={src} width={width} height={height} columns={columns} rows={rows} _scale={_scale} />
 				)}
 			</div>
 		</>
@@ -145,7 +162,15 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
 const SkillAttack: React.FC<PropsSkill> = ({ src, width = 221, height = 285, columns = 8, rows = 2, _scale = 1 }) => {
 	return (
 		<>
-			<div className={`${styles.wrapper} ${styles.attack} skill-attack`}>
+			<div
+				style={
+					{
+						'--width': `${width}px`,
+						'--height': `${height}px`,
+					} as any
+				}
+				className={`${styles.wrapper} ${styles.attack} skill-attack`}
+			>
 				<Skill src={src} width={width} height={height} columns={columns} rows={rows} _scale={_scale} />
 			</div>
 		</>

@@ -35,9 +35,9 @@ const Players: React.FC<Props> = () => {
 						</div>
 					</div>
 				</div>
-				<div className={`${styles.setting} setting-play`}>
-					<SettingPlayGame />
-				</div>
+			</div>
+			<div className={`${styles.setting} setting-play`}>
+				<SettingPlayGame />
 			</div>
 			{card_attack?.id !== '' && card_defense?.id !== '' && <Action />}
 		</>
