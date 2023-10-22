@@ -1,4 +1,3 @@
-declare namespace JSX {
-}
+declare namespace JSX {}
 
 declare module 'fs';

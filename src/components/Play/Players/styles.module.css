@@ -1,3 +1,15 @@
+.main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.main .wrapperPlayer,
+.main .info,
+.main .setting {
+  /* transition: all 1s linear; */
+}
+
 .wrapper {
   width: 100%;
   height: 100%;
@@ -31,7 +43,7 @@
   transform: translateX(-50%);
   width: 1672px;
   transform: rotateX(20deg) translateY(-100px) translateX(-50%) scale(1);
-  animation: animationMap 5s linear forwards;
+  /* animation: animationMap 5s linear forwards; */
 }
 
 @keyframes animationMapImage {
@@ -56,7 +68,7 @@
 .mapImage {
   width: 100%;
   transform: rotate(0deg);
-  animation: animationMapImage 5s linear forwards;
+  /* animation: animationMapImage 5s linear forwards; */
 }
 
 @keyframes appear {
@@ -83,7 +95,7 @@
   width: 87%;
   height: 804px;
   transform: rotateX(20deg) translateY(-100px) translateX(-50%) scale(1);
-  animation: appear 6s linear forwards;
+  /* animation: appear 6s linear forwards; */
 }
 
 .contentPlay {

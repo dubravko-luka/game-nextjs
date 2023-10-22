@@ -3,19 +3,18 @@ import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 type Props = {
-  name: string,
-  option?: any
+	name: string;
+	option?: any;
 };
 
 const Image: React.FC<Props> = ({ name, option }) => {
+	const images = useSelector((state: RootState) => state?.image.images);
 
-  const images = useSelector((state: RootState) => state?.image.images)
-
-  return (
-    <>
-      <img src={images.find((image) => image.key === name)?.base64Image} alt="" {...option} />
-    </>
-  );
+	return (
+		<>
+			<img src={images.find((image) => image.key === name)?.base64Image} alt="_game_" {...option} />
+		</>
+	);
 };
 
 export default memo(Image);

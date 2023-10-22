@@ -1,19 +1,19 @@
-import { SET_IMAGES, ImageAction, ImageState } from "../types/imageTypes";
+import { SET_IMAGES, ImageAction, ImageState } from '../types/imageTypes';
 
 const initialState: ImageState = {
-  images: [],
+	images: [],
 };
 
 const imageReducer = (state = initialState, action: ImageAction): ImageState => {
-  switch (action.type) {
-    case SET_IMAGES:
-      return {
-        ...state,
-        images: [...action?.payload],
-      };
-    default:
-      return state;
-  }
+	switch (action.type) {
+		case SET_IMAGES:
+			return {
+				...state,
+				images: action?.payload,
+			};
+		default:
+			return state;
+	}
 };
 
 export default imageReducer;

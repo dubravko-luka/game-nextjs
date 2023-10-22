@@ -1,0 +1,50 @@
+.wrapper.defense {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper.attack {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 120px;
+}
+
+.minus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes minus {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+._minus {
+  font-size: 72px;
+  font-weight: bold;
+  color: #000;
+  -webkit-text-stroke: 3px #ffffff;
+  animation: minus .1s linear forwards;
+}
+
+.canvas {
+  /* border: 1px solid; */
+}

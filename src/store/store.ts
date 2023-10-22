@@ -10,18 +10,20 @@ import mailboxReducer from './reducers/mailboxReducer';
 import settingReducer from './reducers/settingReducer';
 import allyReducer from './reducers/allyReducer';
 import enemyReducer from './reducers/enemyReducer';
+import attackDefenseReducer from './reducers/attackDefenseReducer';
 
 const rootReducer = combineReducers({
-  window: windowReducer,
-  screen: screenReducer,
-  image: imageReducer,
-  knapsack: knapsackReducer,
-  card: cardReducer,
-  shop: shopReducer,
-  mailbox: mailboxReducer,
-  setting: settingReducer,
-  ally: allyReducer,
-  enemy: enemyReducer
+	window: windowReducer,
+	screen: screenReducer,
+	image: imageReducer,
+	knapsack: knapsackReducer,
+	card: cardReducer,
+	shop: shopReducer,
+	mailbox: mailboxReducer,
+	setting: settingReducer,
+	ally: allyReducer,
+	enemy: enemyReducer,
+	attackDefense: attackDefenseReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
