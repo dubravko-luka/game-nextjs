@@ -99,7 +99,7 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
 			clearTimeout(timeOut);
 
 			// eslint-disable-next-line
-		}, columns * frameDelay + 2000);
+		}, columns * frameDelay + 1200);
 
 		// eslint-disable-next-line
 	}, []);
