@@ -53,7 +53,9 @@ const Skill: React.FC<PropsSkill> = ({ src, width = 221, height = 285, columns =
 				currentFrame++;
 				if (currentFrame > frameColumns) {
 					currentRows++;
-					currentFrame = 0;
+
+					// eslint-disable-next-line
+          currentFrame = 0;
 				}
 
 				if (currentRows < frameRows) {
@@ -82,8 +84,12 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
 		const timeOut = setTimeout(() => {
 			setShowMinus(true);
 			clearTimeout(timeOut);
-		}, columns * frameDelay);
-	}, []);
+
+			// eslint-disable-next-line
+    }, columns * frameDelay);
+
+		// eslint-disable-next-line
+  }, []);
 
 	useEffect(() => {
 		const timeOut = setTimeout(() => {
@@ -91,8 +97,12 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
 			dispatch(setCardDefense(cardDefault[0]));
 			dispatch(setIsAttack(true));
 			clearTimeout(timeOut);
-		}, columns * frameDelay + 1000);
-	}, []);
+
+			// eslint-disable-next-line
+    }, columns * frameDelay + 1000);
+
+		// eslint-disable-next-line
+  }, []);
 
 	return (
 		<>
