@@ -29,6 +29,11 @@
   flex-wrap: wrap;
   margin-left: 15px;
   padding-bottom: 50px;
+  overflow: hidden;
+}
+
+.displayNone {
+  display: none;
 }
 
 .item {

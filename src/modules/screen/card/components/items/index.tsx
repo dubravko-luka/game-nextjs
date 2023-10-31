@@ -5,12 +5,20 @@ import { RootState } from '@/store/types';
 import { useSelector } from 'react-redux';
 import { CARD_ENUM_TAB } from '@/types/enum';
 import Detail from './detail';
+import LazyLoadCard from '@/components/LazyLoadItem/Card';
 
 type Props = {
 	//
 };
 
-const beatman = [
+type TypeItem = {
+	id: number;
+	type: number;
+	name: string;
+	src: string;
+};
+
+const beatman: TypeItem[] = [
 	{
 		id: 0,
 		type: 0,
@@ -85,7 +93,7 @@ const beatman = [
 	},
 ];
 
-const devil = [
+const devil: TypeItem[] = [
 	{
 		id: 0,
 		type: 1,
@@ -160,7 +168,7 @@ const devil = [
 	},
 ];
 
-const fairy = [
+const fairy: TypeItem[] = [
 	{
 		id: 0,
 		type: 2,
@@ -235,7 +243,7 @@ const fairy = [
 	},
 ];
 
-const human = [
+const human: TypeItem[] = [
 	{
 		id: 0,
 		type: 3,
@@ -310,7 +318,7 @@ const human = [
 	},
 ];
 
-const monster = [
+const monster: TypeItem[] = [
 	{
 		id: 0,
 		type: 4,
@@ -390,6 +398,8 @@ const all = [...beatman, ...devil, ...fairy, ...human, ...monster];
 const Iterms: React.FC<Props> = () => {
 	const [itemSelect, setItemSelect] = useState(all[0]);
 	const tabActive = useSelector((state: RootState) => state?.card?.tab);
+	const [list, setList] = useState<TypeItem[]>(all);
+	const [visibleDivs, setVisibleDivs] = useState<any>([]);
 
 	useEffect(() => {
 		if (tabActive === CARD_ENUM_TAB.ALL) {
@@ -412,84 +422,49 @@ const Iterms: React.FC<Props> = () => {
 		}
 	}, [tabActive]);
 
+	useEffect(() => {
+		if (tabActive === CARD_ENUM_TAB.ALL) {
+			setList([...all]);
+		}
+		if (tabActive === CARD_ENUM_TAB.BEATMAN) {
+			setList([...beatman]);
+		}
+		if (tabActive === CARD_ENUM_TAB.DEVIL) {
+			setList([...devil]);
+		}
+		if (tabActive === CARD_ENUM_TAB.FAIRY) {
+			setList([...fairy]);
+		}
+		if (tabActive === CARD_ENUM_TAB.HUMAN) {
+			setList([...human]);
+		}
+		if (tabActive === CARD_ENUM_TAB.MONSTER) {
+			setList([...monster]);
+		}
+	}, [tabActive]);
+
 	return (
 		<>
 			<div className={`${styles.wrapper}`}>
 				<div className={`${styles.wrapItems}`}>
-					<div className={`${styles.items}`}>
-						{tabActive === CARD_ENUM_TAB.ALL &&
-							all.map((item, index) => (
+					<LazyLoadCard list={list} visibleDivs={visibleDivs} setVisibleDivs={setVisibleDivs}>
+						<div className={`${styles.items}`}>
+							{list.map((item, index) => (
 								<div
 									key={index}
-									className={`${styles.item} ${
+									className={`item-game ${styles.item} ${
 										itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''
 									}`}
 									onClick={() => setItemSelect(item)}
 								>
-									<Image option={{ className: styles.imgItem }} name={item?.src} />
+									<Image
+										option={{ className: `${styles.imgItem} ${visibleDivs.includes(index) ? '' : styles.displayNone}` }}
+										name={item?.src}
+									/>
 								</div>
 							))}
-						{tabActive === CARD_ENUM_TAB.BEATMAN &&
-							beatman.map((item, index) => (
-								<div
-									key={index}
-									className={`${styles.item} ${
-										itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''
-									}`}
-									onClick={() => setItemSelect(item)}
-								>
-									<Image option={{ className: styles.imgItem }} name={item?.src} />
-								</div>
-							))}
-						{tabActive === CARD_ENUM_TAB.DEVIL &&
-							devil.map((item, index) => (
-								<div
-									key={index}
-									className={`${styles.item} ${
-										itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''
-									}`}
-									onClick={() => setItemSelect(item)}
-								>
-									<Image option={{ className: styles.imgItem }} name={item?.src} />
-								</div>
-							))}
-						{tabActive === CARD_ENUM_TAB.FAIRY &&
-							fairy.map((item, index) => (
-								<div
-									key={index}
-									className={`${styles.item} ${
-										itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''
-									}`}
-									onClick={() => setItemSelect(item)}
-								>
-									<Image option={{ className: styles.imgItem }} name={item?.src} />
-								</div>
-							))}
-						{tabActive === CARD_ENUM_TAB.HUMAN &&
-							human.map((item, index) => (
-								<div
-									key={index}
-									className={`${styles.item} ${
-										itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''
-									}`}
-									onClick={() => setItemSelect(item)}
-								>
-									<Image option={{ className: styles.imgItem }} name={item?.src} />
-								</div>
-							))}
-						{tabActive === CARD_ENUM_TAB.MONSTER &&
-							monster.map((item, index) => (
-								<div
-									key={index}
-									className={`${styles.item} ${
-										itemSelect.id === item.id && itemSelect.type === item.type ? styles.active : ''
-									}`}
-									onClick={() => setItemSelect(item)}
-								>
-									<Image option={{ className: styles.imgItem }} name={item?.src} />
-								</div>
-							))}
-					</div>
+						</div>
+					</LazyLoadCard>
 				</div>
 				<Detail item={itemSelect} />
 			</div>

@@ -13,7 +13,7 @@ const Info: React.FC<Props> = () => {
 			<div className={`${styles.infoEnemy}`}>
 				<div className={`${styles.infoEnemyContent}`}>
 					<div className={`${styles.avatar}`}>
-						<Image option={{ className: styles.imageAvatar }} name={'/images/player/avatar.png'} />
+						<Image option={{ className: styles.imageAvatar }} name={'/images/cards/pieces/gregory-pieces.png'} />
 					</div>
 					<p className={`${styles.playerName}`}>Player Name</p>
 					<p className={`${styles.level}`}>Lv. 1</p>

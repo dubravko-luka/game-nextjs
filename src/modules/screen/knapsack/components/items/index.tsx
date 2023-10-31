@@ -44,7 +44,7 @@ const items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => {
 	};
 });
 
-const gift_bags = [0, 1, 2, 3, 4, 5].map((item, index) => {
+const gift_bags = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item, index) => {
 	return {
 		id: item,
 		type: 2,

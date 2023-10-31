@@ -28,22 +28,22 @@ const initialState: AllyState = {
 	card_reserve: [
 		{
 			id: '1',
-			src: '/images/cards/hel.png',
+			src: '/images/cards/beatman/butterman.png',
 			type: CARD_TYPE.CARD,
 		},
 		{
 			id: '2',
-			src: '/images/cards/surtur.png',
+			src: '/images/cards/fairy/cael.png',
 			type: CARD_TYPE.CARD,
 		},
 		{
 			id: '3',
-			src: '/images/cards/hel.png',
+			src: '/images/cards/fairy/calixto.png',
 			type: CARD_TYPE.CARD,
 		},
 		{
 			id: '4',
-			src: '/images/cards/jormungandr.png',
+			src: '/images/cards/monster/firefos.png',
 			type: CARD_TYPE.CARD,
 		},
 	],

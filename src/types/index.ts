@@ -9,7 +9,7 @@ export const cardDefault: ICardPlaying[] = [
 	},
 	{
 		id: '1',
-		src: '/images/cards/hel.png',
+		src: '/images/cards/devil/claries.png',
 		type: CARD_TYPE.CARD,
 	},
 ];
@@ -17,12 +17,12 @@ export const cardDefault: ICardPlaying[] = [
 export const cardMainDefault: ICardMainPlaying[] = [
 	{
 		id: '1',
-		src: '/images/cards/hero/thomas.png',
+		src: '/images/cards/human/allian.png',
 		type: CARD_TYPE.HERO,
 	},
 	{
 		id: '2',
-		src: '/images/cards/hero/mei.png',
+		src: '/images/cards/devil/septid.png',
 		type: CARD_TYPE.HERO,
 	},
 ];

@@ -23,7 +23,7 @@ type Props = {
 const positionPlayer = [
 	{
 		type: PLAYER_ENUM.PLAYER_1,
-		top: '456px',
+		top: '435px',
 	},
 ];
 
@@ -56,7 +56,7 @@ const Ally: React.FC<Props> = () => {
 			document.removeEventListener('click', (e) => handleClickOutsideCard(e, refCardReserve, resetCardReserveSelected));
 		};
 		// eslint-disable-next-line
-  }, [refCardReserve]);
+	}, [refCardReserve]);
 
 	return (
 		<>
