@@ -30,7 +30,7 @@ const HomeTutorial: React.FC<Props> = () => {
 								<div className={`${styles.user}`}>
 									<div className={`${styles.infoBasic}`}>
 										<div className={`${styles.avatar}`}>
-											<Image name="/images/player/avatar.png" />
+											<Image name="/images/cards/pieces/allian-pieces.png" option={{ className: styles.imgAvatar }} />
 										</div>
 										<div className={`${styles.basic}`}>
 											<div className={`${styles.name}`}>
@@ -58,7 +58,7 @@ const HomeTutorial: React.FC<Props> = () => {
 									</div>
 									<div className={`${styles.infoBasic}`}>
 										<div className={`${styles.avatar}`}>
-											<Image name="/images/player/avatar.png" />
+											<Image name="/images/cards/pieces/mia-pieces.png" option={{ className: styles.imgAvatar }} />
 										</div>
 										<div className={`${styles.basic}`}>
 											<div className={`${styles.name}`}>

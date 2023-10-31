@@ -10,12 +10,28 @@ type Props = {
 	//
 };
 
-const card_fragments = [0, 1, 2, 3].map((item, index) => {
+const card_fragments = [
+	'sharkmans',
+	'mia',
+	'monkey-king',
+	'lily',
+	'allian',
+	'vlader',
+	'vivian',
+	'cfoges',
+	'sephera',
+	'memetius',
+	'bled',
+	'gregory',
+	'thanes',
+	'moraz',
+	'klarius',
+]?.map((item, index) => {
 	return {
-		id: item,
+		id: index,
 		type: 0,
-		name: 'Puzzle piece MAX',
-		src: '/images/player/avatar.png',
+		name: `Puzzle piece ${item}`,
+		src: `/images/cards/pieces/${item}-pieces.png`,
 	};
 });
 

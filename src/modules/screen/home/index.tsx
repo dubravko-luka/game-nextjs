@@ -51,6 +51,8 @@ const HomeScreen: React.FC<Props> = () => {
 			<div className={`${styles.wrapper}`}>
 				<Image name="/images/home/background.jpeg" option={{ className: `${styles.imgBackground}` }} />
 				{/*  */}
+				<div className={`${styles.campaignIcon}`}>{modeGame[mode].component}</div>
+				{/*  */}
 				<div className={`${styles.player}`}>
 					<Player />
 				</div>
@@ -63,8 +65,6 @@ const HomeScreen: React.FC<Props> = () => {
 				<div className={`${styles.rightMenu}`}>
 					<MenuHomeRight />
 				</div>
-				{/*  */}
-				<div className={`${styles.campaignIcon}`}>{modeGame[mode].component}</div>
 				{/*  */}
 				<div className={`${styles.buttonMain}`} onClick={() => dispath(setScreen(modeGame[mode].screen))}>
 					<div className={`${styles._buttonMain}`}>

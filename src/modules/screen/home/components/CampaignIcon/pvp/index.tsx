@@ -10,11 +10,8 @@ const CampaignIconPVP: React.FC<Props> = () => {
 	return (
 		<>
 			<div className={`${styles.wrapper}`}>
-				<div className={`${styles.wrapImg} ${styles.img_1}`}>
-					<Image name="/images/cards/hero/mei.png" option={{ className: `${styles.img}` }} />
-				</div>
-				<div className={`${styles.wrapImg} ${styles.img_2}`}>
-					<Image name="/images/cards/hero/thomas.png" option={{ className: `${styles.img}` }} />
+				<div className={`${styles.wrapImg}`}>
+					<Image name="/images/cards/hero/model/celixa.png" option={{ className: `${styles.imgHero}` }} />
 				</div>
 			</div>
 		</>

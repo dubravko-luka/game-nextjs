@@ -6,7 +6,7 @@ export const Avatar: React.FC = () => {
 	return (
 		<>
 			<div className={`${styles.avatarWrapper}`}>
-				<Image name={'/images/player/avatar.png'} option={{ className: `${styles.avatar}` }} />
+				<Image name={'/images/cards/pieces/allian-pieces.png'} option={{ className: `${styles.avatar}` }} />
 			</div>
 		</>
 	);

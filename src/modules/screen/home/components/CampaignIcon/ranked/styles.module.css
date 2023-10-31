@@ -1,6 +1,6 @@
 .wrapper {
   position: absolute;
-  top: -144px;
+  top: -344px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -10,46 +10,18 @@
 }
 
 .imgHero {
-  min-width: 600px;
-}
-
-.wrapSvg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -124px;
-  left: 0px;
-}
-
-.svg {
-  width: 100%;
-}
-
-@keyframes opacity {
-
-  0%,
-  100% {
-    opacity: .5;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-.animationOpacity {
-  animation: opacity 1s linear infinite;
+  min-width: 1300px;
 }
 
 @keyframes top {
 
   0%,
   100% {
-    top: -134px;
+    top: -354px;
   }
 
   50% {
-    top: -154px;
+    top: -384px;
   }
 }
 

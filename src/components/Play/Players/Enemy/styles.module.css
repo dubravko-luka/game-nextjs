@@ -65,7 +65,7 @@
   right: 20px;
   width: 100px;
   height: 100px;
-  background: rgba(0, 94, 255, 0.7);
+  background: rgba(255, 0, 0, 0.7);
   box-shadow: -4px 4px 5px 5px rgb(0, 0, 0, .4);
   border-radius: 50%;
   display: flex;

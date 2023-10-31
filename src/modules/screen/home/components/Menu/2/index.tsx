@@ -10,26 +10,26 @@ type Props = {
 };
 
 const foreignNames = [
-	'JohnDoe',
-	'JaneSmith',
-	'MichaelBrown',
-	'EmilyJohnson',
-	'WilliamDavis',
-	'OliviaMartinez',
-	'JamesWilson',
-	'SophiaLopez',
-	'RobertAnderson',
-	'MiaGonzalez',
-	'DavidTaylor',
-	'AvaHernandez',
-	'JosephMoore',
-	'IsabellaMartin',
-	'CharlesClark',
-	'AbigailLewis',
-	'RichardYoung',
-	'NoraWalker',
-	'ThomasWhite',
-	'EllaHall',
+	'Allian',
+	'Vlader',
+	'Vivian',
+	'Bled',
+	'Cfoges',
+	'Thanes',
+	'Sharkmans',
+	'Gregory',
+	'Klarius',
+	'Lily',
+	'Sephera',
+	'Moraz',
+	'Mia',
+	'Monkey King',
+	'Memetius',
+	'Allian',
+	'Vivian',
+	'Sephera',
+	'Klarius',
+	'Vlader',
 ];
 
 const MenuHome: React.FC<Props> = () => {
@@ -51,7 +51,10 @@ const MenuHome: React.FC<Props> = () => {
 									</div>
 								</div>
 								<div className={`${styles.avatar}`}>
-									<Image name={'/images/player/avatar.png'} option={{ className: `${styles.imgAvatar}` }} />
+									<Image
+										name={`/images/cards/pieces/${item.toLowerCase().replace(/ /g, '-')}-pieces.png`}
+										option={{ className: `${styles.imgAvatar}` }}
+									/>
 								</div>
 								<div className={`${styles.info}`}>
 									<div>

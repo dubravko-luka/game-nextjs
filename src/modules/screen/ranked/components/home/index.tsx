@@ -36,7 +36,7 @@ const HomeRanked: React.FC<Props> = () => {
 								</div>
 								<div className={`${styles.contentUser}`}>
 									<div className={`${styles.avatar}`}>
-										<Image option={{ className: styles._avatar }} name="/images/player/avatar.png" />
+										<Image option={{ className: styles._avatar }} name="/images/cards/pieces/allian-pieces.png" />
 										<div className={`${styles.frameAvatar}`}>
 											<FrameAvatar />
 										</div>

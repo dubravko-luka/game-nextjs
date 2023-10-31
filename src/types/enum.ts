@@ -74,10 +74,11 @@ export enum KNAPSACK_ENUM_TAB {
 
 export enum CARD_ENUM_TAB {
 	ALL = 'ALL',
+	BEATMAN = 'BEATMAN',
+	DEVIL = 'DEVIL',
+	FAIRY = 'FAIRY',
 	HUMAN = 'HUMAN',
-	GOD = 'GOD',
-	UNDEAD = 'UNDEAD',
-	TITAN = 'TITAN',
+	MONSTER = 'MONSTER',
 }
 
 export enum SHOP_ENUM_TAB {

@@ -13,38 +13,32 @@ const hero = [
 	{
 		id: 0,
 		type: SHOP_ENUM_TAB.HERO,
-		name: 'Surtur',
-		src: '/images/cards/surtur.png',
+		name: 'Cresh',
+		src: '/images/cards/beatman/cresh.png',
 	},
 	{
 		id: 1,
 		type: SHOP_ENUM_TAB.HERO,
-		name: 'Mage',
-		src: '/images/cards/mage.png',
+		name: 'Vlader',
+		src: '/images/cards/devil/vlader.png',
 	},
 	{
 		id: 2,
 		type: SHOP_ENUM_TAB.HERO,
-		name: 'Takeit',
-		src: '/images/cards/takeit.png',
+		name: 'Posy',
+		src: '/images/cards/fairy/posy.png',
 	},
 	{
 		id: 3,
 		type: SHOP_ENUM_TAB.HERO,
 		name: 'Jormungandr',
-		src: '/images/cards/jormungandr.png',
+		src: '/images/cards/human/roxie.png',
 	},
 	{
-		id: 3,
+		id: 4,
 		type: SHOP_ENUM_TAB.HERO,
-		name: 'Hel',
-		src: '/images/cards/hel.png',
-	},
-	{
-		id: 3,
-		type: SHOP_ENUM_TAB.HERO,
-		name: 'Hel',
-		src: '/images/cards/blessing.png',
+		name: 'Zodius',
+		src: '/images/cards/monster/zodius.png',
 	},
 ];
 

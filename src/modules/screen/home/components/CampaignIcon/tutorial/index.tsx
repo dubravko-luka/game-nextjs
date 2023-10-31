@@ -10,14 +10,8 @@ const CampaignIconTutorial: React.FC<Props> = () => {
 	return (
 		<>
 			<div className={`${styles.wrapper}`}>
-				<div className={`${styles.wrapImg} ${styles.img_1}`}>
-					<Image name="/images/cards/blessing.png" option={{ className: `${styles.img}` }} />
-				</div>
-				<div className={`${styles.wrapImg} ${styles.img_2}`}>
-					<Image name="/images/cards/jormungandr.png" option={{ className: `${styles.img}` }} />
-				</div>
-				<div className={`${styles.wrapImg} ${styles.img_3}`}>
-					<Image name="/images/cards/takeit.png" option={{ className: `${styles.img}` }} />
+				<div className={`${styles.wrapImg}`}>
+					<Image name="/images/cards/hero/model/mia.png" option={{ className: `${styles.imgHero}` }} />
 				</div>
 			</div>
 		</>

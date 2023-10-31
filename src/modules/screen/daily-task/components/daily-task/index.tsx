@@ -15,7 +15,7 @@ const DailyTask: React.FC<Props> = () => {
 						<Image name="/images/daily-task/frame.png" option={{ className: styles.imageFrame }} />
 					</div>
 					<div className={`${styles.hero}`}>
-						<Image name="/images/daily-task/hero.png" option={{ className: styles.imageHero }} />
+						<Image name="/images/cards/hero/model/regina.png" option={{ className: styles.imageHero }} />
 					</div>
 					<div className={`${styles.text}`}>
 						<p className={styles.title}>PROGRESS COMPLETED</p>

@@ -15,20 +15,24 @@ const tabs = [
 		tab: CARD_ENUM_TAB.ALL,
 	},
 	{
+		name: 'Beatman',
+		tab: CARD_ENUM_TAB.BEATMAN,
+	},
+	{
+		name: 'Devil',
+		tab: CARD_ENUM_TAB.DEVIL,
+	},
+	{
+		name: 'Fairy',
+		tab: CARD_ENUM_TAB.FAIRY,
+	},
+	{
 		name: 'Human',
 		tab: CARD_ENUM_TAB.HUMAN,
 	},
 	{
-		name: 'Titan',
-		tab: CARD_ENUM_TAB.TITAN,
-	},
-	{
-		name: 'God',
-		tab: CARD_ENUM_TAB.GOD,
-	},
-	{
-		name: 'Undead',
-		tab: CARD_ENUM_TAB.UNDEAD,
+		name: 'Monster',
+		tab: CARD_ENUM_TAB.MONSTER,
 	},
 ];
 

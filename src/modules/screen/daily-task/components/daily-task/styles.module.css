@@ -28,12 +28,12 @@
 
 .hero {
   position: absolute;
-  top: -21px;
-  left: 135px;
+  top: -87px;
+  left: -143px;
 }
 
 .imageHero {
-  width: 335px;
+  max-width: 900px;
   transform: rotateY(180deg);
 }
 

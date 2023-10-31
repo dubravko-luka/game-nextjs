@@ -15,10 +15,11 @@ type Props = {
 };
 
 enum MAP_ENUM {
-	UNDEAD = 'UNDEAD',
-	TITAN = 'TITAN',
-	GOD = 'GOD',
+	BEATMAN = 'BEATMAN',
+	DEVIL = 'DEVIL',
+	FAIRY = 'FAIRY',
 	HUMAN = 'HUMAN',
+	MONSTER = 'MONSTER',
 }
 
 enum LEVEL_ENUM {
@@ -26,6 +27,7 @@ enum LEVEL_ENUM {
 	MEDIUM = 'MEDIUM',
 	NORMAL = 'NORMAL',
 	DIFFICULT = 'DIFFICULT',
+	CUSTOM = 'CUSTOM',
 }
 
 interface IMap {
@@ -41,22 +43,32 @@ interface IMap {
 
 const map: IMap[] = [
 	{
-		id: 2,
-		src: '/images/tutorial/god-map.png',
-		srcTransparent: '/images/tutorial/god-map-transparent.png',
-		name: 'God',
-		type: MAP_ENUM?.GOD,
-		class: styles.mapGod,
-		level: LEVEL_ENUM.NORMAL,
+		id: 0,
+		src: '/images/tutorial/devil-map.png',
+		srcTransparent: '/images/tutorial/devil-map-transparent.png',
+		name: 'Devil',
+		type: MAP_ENUM?.DEVIL,
+		class: styles.mapDevil,
+		level: LEVEL_ENUM.EASY,
+		screen: SCREEN_ENUM.TUTORIAL_1,
 	},
 	{
 		id: 1,
-		src: '/images/tutorial/titan-map.png',
-		srcTransparent: '/images/tutorial/titan-map-transparent.png',
-		name: 'Titan',
-		type: MAP_ENUM?.TITAN,
-		class: styles.mapTitan,
+		src: '/images/tutorial/monster-map.png',
+		srcTransparent: '/images/tutorial/monster-map-transparent.png',
+		name: 'Monster',
+		type: MAP_ENUM?.MONSTER,
+		class: styles.mapMonster,
 		level: LEVEL_ENUM.MEDIUM,
+	},
+	{
+		id: 2,
+		src: '/images/tutorial/beatman-map.png',
+		srcTransparent: '/images/tutorial/beatman-map-transparent.png',
+		name: 'Beatman',
+		type: MAP_ENUM?.BEATMAN,
+		class: styles.mapBeatman,
+		level: LEVEL_ENUM.NORMAL,
 	},
 	{
 		id: 3,
@@ -68,21 +80,20 @@ const map: IMap[] = [
 		level: LEVEL_ENUM.DIFFICULT,
 	},
 	{
-		id: 0,
-		src: '/images/tutorial/undead-map.png',
-		srcTransparent: '/images/tutorial/undead-map-transparent.png',
-		name: 'Undead',
-		type: MAP_ENUM?.UNDEAD,
-		class: styles.mapUndead,
-		level: LEVEL_ENUM.EASY,
-		screen: SCREEN_ENUM.TUTORIAL_1,
+		id: 4,
+		src: '/images/tutorial/fairy-map.png',
+		srcTransparent: '/images/tutorial/fairy-map.png',
+		name: 'Fairy',
+		type: MAP_ENUM?.FAIRY,
+		class: styles.mapFairy,
+		level: LEVEL_ENUM.CUSTOM,
 	},
 ];
 
 const Map: React.FC<Props> = () => {
 	const dispath = useDispatch();
 
-	const [currentMap] = useState(_.find(map, { id: 1 }));
+	const [currentMap] = useState(_.find(map, { id: 4 }));
 	const [hoverIndex, setHoverIndex] = useState(-1);
 	const [isLandSelect, seIsLandSelect] = useState<IMap | any>(null);
 	const dispatch = useDispatch();
@@ -120,7 +131,7 @@ const Map: React.FC<Props> = () => {
 						</div>
 					))}
 
-					{currentMap?.type !== MAP_ENUM.UNDEAD && (
+					{currentMap?.type !== MAP_ENUM.DEVIL && (
 						<div className={`${styles.route} ${styles[currentMap?.type?.toLowerCase() ?? '']}`}>
 							<div className={`${styles._route}`}>
 								<Route />

@@ -1,47 +1,30 @@
 .wrapper {
-  position: relative;
+  position: absolute;
+  top: -344px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .wrapImg {
-  width: 300px;
-  position: absolute;
-  top: 0;
+  position: relative;
 }
 
-@keyframes img_1_animation {
+.imgHero {
+  min-width: 1300px;
+}
+
+@keyframes top {
 
   0%,
   100% {
-    left: -294px;
+    top: -354px;
   }
 
-  20% {
-    left: -254px;
-  }
-}
-
-@keyframes img_2_animation {
-
-  0%,
-  100% {
-    left: 40px;
-  }
-
-  20% {
-    left: 0px;
+  50% {
+    top: -384px;
   }
 }
 
-.img_1 {
-  animation: img_1_animation 2s linear infinite;
-  transform: rotate(-10deg);
-}
-
-.img_2 {
-  animation: img_2_animation 2s linear infinite;
-  transform: rotate(10deg);
-}
-
-.img {
-  width: 100%;
+.wrapper {
+  animation: top 5s linear infinite;
 }

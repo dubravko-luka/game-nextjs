@@ -13,7 +13,7 @@ const CollectSupperRareCards: React.FC<Props> = () => {
 				<div className={`${styles.content}`}>
 					<div className={`${styles.frame}`}></div>
 					<div className={`${styles.items}`}>
-						{['blessing', 'hel', 'mage', 'surtur', 'takeit'].map((item, index) => (
+						{['beatman/yena', 'devil/vlader', 'fairy/xavia', 'human/celixa', 'monster/amycus'].map((item, index) => (
 							<div className={`${styles.item}`} key={index}>
 								<div className={`${styles.wrapImage}`}>
 									<Image name={`/images/cards/${item}.png`} option={{ className: styles.image }} />
