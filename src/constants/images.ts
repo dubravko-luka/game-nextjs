@@ -106,7 +106,6 @@ export const imagesList = [
 	'/images/play/back-card.png',
 	'/images/play/map.png',
 	'/images/play/back-card-enemy.png',
-	'/images/play/map-x.png',
 	'/images/pvp/vs-line.png',
 	'/images/test.svg',
 ];
@@ -218,7 +217,6 @@ export const imageListName = [
 	'/images/play/back-card.png',
 	'/images/play/map.png',
 	'/images/play/back-card-enemy.png',
-	'/images/play/map-x.png',
 	'/images/pvp/vs-line.png',
 	'/images/test.svg',
 ];
