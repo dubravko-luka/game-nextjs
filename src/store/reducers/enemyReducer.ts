@@ -10,11 +10,11 @@ import {
 import { cardDefault, cardMainDefault } from '@/types';
 
 const initialState: EnemyState = {
-	card_1: cardDefault[1],
-	card_2: cardDefault[1],
-	card_3: cardDefault[1],
-	card_4: cardDefault[1],
-	card_main: cardMainDefault[1],
+	card_1: cardDefault[0],
+	card_2: cardDefault[0],
+	card_3: cardDefault[0],
+	card_4: cardDefault[0],
+	card_main: cardMainDefault[0],
 };
 
 const enemyReducer = (state = initialState, action: EnemyAction): EnemyState => {

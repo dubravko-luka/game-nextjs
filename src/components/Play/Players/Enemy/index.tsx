@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/types';
 import Image from '@/components/Image';
 import { setCardDefense } from '@/store/actions/attackDefenseAction';
+import { jsonToWebsocket } from '@/utils/websocket';
+import { useWebSocket } from '@/hooks/useWebSocketPlay';
 
 type Props = {};
 
@@ -21,6 +23,16 @@ const Enemy: React.FC<Props> = () => {
 	const { card_attack, card_defense } = useSelector((state: RootState) => state?.attackDefense);
 
 	const dispatch = useDispatch();
+	const { sendMessage } = useWebSocket();
+
+	const defense = (item: any) => {
+		dispatch(setCardDefense(item));
+		const message = jsonToWebsocket({
+			card_defense: card_attack,
+			card_attack: item,
+		});
+		sendMessage(message);
+	};
 
 	return (
 		<>
@@ -37,7 +49,7 @@ const Enemy: React.FC<Props> = () => {
 						key={index}
 						onClick={() => {
 							if (card_attack?.id !== '' && card_defense.id === '' && item !== undefined && item?.src !== '') {
-								dispatch(setCardDefense(item));
+								defense(item);
 							}
 						}}
 					>

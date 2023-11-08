@@ -7,7 +7,7 @@
 .main .wrapperPlayer,
 .main .info,
 .main .setting {
-  transition: all 1s linear;
+  /* transition: all 1s linear; */
 }
 
 .wrapper {
@@ -43,7 +43,7 @@
   transform: translateX(-50%);
   width: 1672px;
   transform: rotateX(20deg) translateY(-100px) translateX(-50%) scale(1);
-  animation: animationMap 5s linear forwards;
+  /* animation: animationMap 5s linear forwards; */
 }
 
 @keyframes animationMapImage {
@@ -68,7 +68,7 @@
 .mapImage {
   width: 100%;
   transform: rotate(0deg);
-  animation: animationMapImage 5s linear forwards;
+  /* animation: animationMapImage 5s linear forwards; */
 }
 
 @keyframes appear {
@@ -95,7 +95,7 @@
   width: 87%;
   height: 804px;
   transform: rotateX(20deg) translateY(-100px) translateX(-50%) scale(1);
-  animation: appear 6s linear forwards;
+  /* animation: appear 6s linear forwards; */
 }
 
 .contentPlay {
@@ -109,4 +109,26 @@
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.play {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  z-index: 99;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnPlay {
+  padding: 20px 50px;
+  box-sizing: border-box;
+  background: red;
+  border-radius: 10px;
+  font-size: 42px;
+  font-weight: bold;
 }

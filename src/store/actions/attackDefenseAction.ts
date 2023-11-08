@@ -1,5 +1,13 @@
 import { ICardPlaying } from '@/types/interfaces';
-import { SET_CARD_ATTACK, SET_CARD_DEFENSE, SET_DELAY_SKILL, SET_IS_ATTACK } from '../types/attackDefenseTypes';
+import {
+	SET_CARD_ATTACK,
+	SET_CARD_DEFENSE,
+	SET_DELAY_SKILL,
+	SET_IS_ATTACK,
+	SET_TURN_YOUR,
+	SET_TURN_ENEMY,
+	SET_READY,
+} from '../types/attackDefenseTypes';
 
 export const setCardAttack = (card: ICardPlaying) => {
 	return {
@@ -26,5 +34,26 @@ export const setDelaySkill = (delay: number) => {
 	return {
 		type: SET_DELAY_SKILL,
 		payload: delay,
+	};
+};
+
+export const setYourTurn = (turn: boolean) => {
+	return {
+		type: SET_TURN_YOUR,
+		payload: turn,
+	};
+};
+
+export const setTurnEnemy = (turn: boolean) => {
+	return {
+		type: SET_TURN_ENEMY,
+		payload: turn,
+	};
+};
+
+export const setReady = (ready: boolean[]) => {
+	return {
+		type: SET_READY,
+		payload: ready,
 	};
 };

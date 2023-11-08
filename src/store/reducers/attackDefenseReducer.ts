@@ -5,6 +5,9 @@ import {
 	SET_CARD_DEFENSE,
 	SET_DELAY_SKILL,
 	SET_IS_ATTACK,
+	SET_TURN_YOUR,
+	SET_TURN_ENEMY,
+	SET_READY,
 } from '../types/attackDefenseTypes';
 import { cardDefault } from '@/types';
 
@@ -13,6 +16,9 @@ const initialState: AttackDefenseState = {
 	card_defense: cardDefault[0],
 	isAttack: true,
 	delaySkill: 70,
+	turnYour: false,
+	turnEnemy: false,
+	ready: [],
 };
 
 const attackDefenseReducer = (state = initialState, action: AttackDefenseAction): AttackDefenseState => {
@@ -36,6 +42,21 @@ const attackDefenseReducer = (state = initialState, action: AttackDefenseAction)
 			return {
 				...state,
 				delaySkill: action?.payload,
+			};
+		case SET_TURN_YOUR:
+			return {
+				...state,
+				turnYour: action?.payload,
+			};
+		case SET_TURN_ENEMY:
+			return {
+				...state,
+				turnEnemy: action?.payload,
+			};
+		case SET_READY:
+			return {
+				...state,
+				ready: action?.payload,
 			};
 		default:
 			return state;

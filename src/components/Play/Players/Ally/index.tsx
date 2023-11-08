@@ -13,8 +13,10 @@ import {
 	setCardTwo,
 } from '@/store/actions/allyAction';
 import Image from '@/components/Image';
-import { setCardAttack } from '@/store/actions/attackDefenseAction';
+import { setCardAttack, setTurnEnemy, setYourTurn } from '@/store/actions/attackDefenseAction';
 import { cardDefault } from '@/types';
+import { jsonToWebsocket } from '@/utils/websocket';
+import { useWebSocket } from '@/hooks/useWebSocketPlay';
 
 type Props = {
 	//
@@ -30,9 +32,11 @@ const positionPlayer = [
 const actionStore = [setCardOne, setCardTwo, setCardThree, setCardFour];
 
 const Ally: React.FC<Props> = () => {
+	const { sendMessage } = useWebSocket();
 	const { card_1, card_2, card_3, card_4, card_main, card_reserve, card_reserve_selected } = useSelector(
 		(state: RootState) => state?.ally,
 	);
+	const { turnYour, turnEnemy } = useSelector((state: RootState) => state?.attackDefense);
 	const { card_attack } = useSelector((state: RootState) => state?.attackDefense);
 	const dispatch = useDispatch();
 
@@ -58,6 +62,17 @@ const Ally: React.FC<Props> = () => {
 		// eslint-disable-next-line
 	}, [refCardReserve]);
 
+	const endTurn = () => {
+		const message = jsonToWebsocket({
+			turn: 'reverse-turn',
+			yourTurn: turnYour ? true : false,
+			enemyTurn: turnEnemy ? true : false,
+		});
+		dispatch(setYourTurn(false));
+		dispatch(setTurnEnemy(true));
+		sendMessage(message);
+	};
+
 	return (
 		<>
 			<div
@@ -72,26 +87,44 @@ const Ally: React.FC<Props> = () => {
 					<div
 						key={index}
 						onClick={() => {
-							if (item !== undefined && item?.id !== '') {
-								if (card_attack?.id === item?.id) {
-									dispatch(setCardAttack(cardDefault[0]));
-								} else {
-									dispatch(setCardAttack(item));
-								}
-							} else {
-								if (index !== 2) {
-									setAnimation(false);
-									if (index > 2) {
-										dispatch(actionStore[index - 1](card_reserve[card_reserve_selected]));
+							if (turnYour) {
+								if (item !== undefined && item?.id !== '') {
+									if (card_attack?.id === item?.id) {
+										dispatch(setCardAttack(cardDefault[0]));
 									} else {
-										dispatch(actionStore[index](card_reserve[card_reserve_selected]));
+										dispatch(setCardAttack(item));
 									}
-									dispatch(setCardReserveSelected(-1));
-									dispatch(setCardReserve(card_reserve.filter((_, index) => index !== card_reserve_selected)));
-									const timeOut = setTimeout(() => {
-										clearTimeout(timeOut);
-										setAnimation(true);
-									}, 300);
+								} else {
+									if (index !== 2) {
+										setAnimation(false);
+										if (index > 2) {
+											dispatch(actionStore[index - 1](card_reserve[card_reserve_selected]));
+											const message = jsonToWebsocket({
+												turn: 'change-card',
+												card_1,
+												card_2,
+												card_3: index === 3 ? card_reserve[card_reserve_selected] : card_3,
+												card_4: index === 4 ? card_reserve[card_reserve_selected] : card_4,
+											});
+											sendMessage(message);
+										} else {
+											dispatch(actionStore[index](card_reserve[card_reserve_selected]));
+											const message = jsonToWebsocket({
+												turn: 'change-card',
+												card_3,
+												card_4,
+												card_1: index === 0 ? card_reserve[card_reserve_selected] : card_1,
+												card_2: index === 1 ? card_reserve[card_reserve_selected] : card_2,
+											});
+											sendMessage(message);
+										}
+										dispatch(setCardReserveSelected(-1));
+										dispatch(setCardReserve(card_reserve.filter((_, index) => index !== card_reserve_selected)));
+										const timeOut = setTimeout(() => {
+											clearTimeout(timeOut);
+											setAnimation(true);
+										}, 300);
+									}
 								}
 							}
 						}}
@@ -127,9 +160,11 @@ const Ally: React.FC<Props> = () => {
 			</div>
 
 			{/* Enturn */}
-			<div className={`${styles.btnEndturn}`}>
-				<button className={styles.endturnButton}>END TURN</button>
-			</div>
+			{turnYour && (
+				<div className={`${styles.btnEndturn}`} onClick={endTurn}>
+					<button className={styles.endturnButton}>END TURN</button>
+				</div>
+			)}
 
 			{/* Mana */}
 			<div className={`${styles.manaWrap}`}>
