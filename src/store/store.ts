@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
 	ally: allyReducer,
 	enemy: enemyReducer,
 	attackDefense: attackDefenseReducer,
-	webSocket: webSocketReducer
+	webSocket: webSocketReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

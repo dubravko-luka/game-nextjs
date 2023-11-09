@@ -84,16 +84,15 @@ export const setCardReserve = (card: ICardPlaying[]) => {
 	};
 };
 
-
 export const resetAlly = () => {
 	return {
 		type: RESET_ALLY,
 	};
-}
+};
 
 export const setManaAlly = (mana: number) => {
 	return {
 		type: SET_MANA_ALLY,
-		payload: mana
+		payload: mana,
 	};
-}
+};

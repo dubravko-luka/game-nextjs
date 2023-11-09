@@ -1,18 +1,17 @@
-import copy from 'copy-to-clipboard'
+import copy from 'copy-to-clipboard';
 
 export function generateRandomString(length = 12) {
-  let result = '';
+	let result = '';
 
-  for (let i = 0; i < length; i++) {
-    result += Math.floor(Math.random() * 10);
-  }
+	for (let i = 0; i < length; i++) {
+		result += Math.floor(Math.random() * 10);
+	}
 
-  return result;
+	return result;
 }
 
 export const copyClipboard = (value: any) => {
+	copy(value);
 
-  copy(value);
-
-  return true;
-}
+	return true;
+};

@@ -10,7 +10,7 @@ export enum SCREEN_ENUM {
 	ACTIVITY = 'ACTIVITY',
 	DAILY_TASK = 'DAILY_TASK',
 	MAILBOX = 'MAILBOX',
-	PLAY_PVP = 'PLAY_PVP'
+	PLAY_PVP = 'PLAY_PVP',
 }
 
 export enum MODE_GAME {
@@ -112,13 +112,12 @@ export enum CARD_TYPE {
 	CARD = 'CARD',
 }
 
-
 export enum PLAY_ENUM_SOCKET {
-	START = "START",
-	CREATE = "CREATE",
-	JOIN = "JOIN",
+	START = 'START',
+	CREATE = 'CREATE',
+	JOIN = 'JOIN',
 	END_TURN = 'END_TURN',
 	GO_TO_BATTLE = 'GO_TO_BATTLE',
 	ATTACK = 'ATTACK',
-	CLOSE = 'CLOSE'
+	CLOSE = 'CLOSE',
 }

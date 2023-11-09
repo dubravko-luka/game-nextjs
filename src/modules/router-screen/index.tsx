@@ -34,13 +34,13 @@ const screenTutorial = [
 const screenPvP = [
 	{
 		screen: SCREEN_ENUM.PLAY_PVP,
-		component: <PlayPvP />
+		component: <PlayPvP />,
 	},
 	{
 		screen: SCREEN_ENUM.PVP,
 		component: <Pvp />,
 	},
-]
+];
 
 const screenRoutes = [
 	...screenTutorial,

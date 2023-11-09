@@ -35,10 +35,12 @@ const positionPlayer = [
 const actionStore = [setCardOne, setCardTwo, setCardMain, setCardThree, setCardFour];
 
 const Ally: React.FC<Props> = () => {
-	const { sendMessage } = useWebSocket()
+	const { sendMessage } = useWebSocket();
 	const dispatch = useDispatch();
 
-	const { card_1, card_2, card_3, card_4, card_main, card_reserve, card_reserve_selected, mana } = useSelector((state: RootState) => state?.ally);
+	const { card_1, card_2, card_3, card_4, card_main, card_reserve, card_reserve_selected, mana } = useSelector(
+		(state: RootState) => state?.ally,
+	);
 	const { mana: manaEnemy } = useSelector((state: RootState) => state?.enemy);
 	const { turnYour, turnEnemy } = useSelector((state: RootState) => state?.attackDefense);
 	const { card_attack } = useSelector((state: RootState) => state?.attackDefense);
@@ -70,13 +72,13 @@ const Ally: React.FC<Props> = () => {
 		const message = jsonToWebsocket({
 			type: PLAY_ENUM_SOCKET.END_TURN,
 			yourMana: manaEnemy,
-			enemyMana: mana
+			enemyMana: mana,
 		});
 		sendMessage(message);
 
 		dispatch(setYourTurn(!turnYour));
 		dispatch(setTurnEnemy(!turnEnemy));
-		dispatch(setManaEnemy(manaEnemy + 1))
+		dispatch(setManaEnemy(manaEnemy + 1));
 	};
 
 	const onGotoBattle = (index: number) => {
@@ -85,20 +87,20 @@ const Ally: React.FC<Props> = () => {
 			setAnimation(false);
 			dispatch(actionStore[index](card_reserve[card_reserve_selected]));
 
-			let cards: any = { card_1, card_2, card_main, card_3, card_4 }
-			let cards_name: any = ['card_1', 'card_2', 'card_main', 'card_3', 'card_4']
-			cards[cards_name[index]] = card_reserve[card_reserve_selected]
+			const cards: any = { card_1, card_2, card_main, card_3, card_4 };
+			const cards_name: any = ['card_1', 'card_2', 'card_main', 'card_3', 'card_4'];
+			cards[cards_name[index]] = card_reserve[card_reserve_selected];
 
 			const message = jsonToWebsocket({
 				type: PLAY_ENUM_SOCKET.GO_TO_BATTLE,
 				...cards,
 				yourMana: manaEnemy,
-				enemyMana: mana - 1
+				enemyMana: mana - 1,
 			});
 			sendMessage(message);
 
-			// 
-			dispatch(setManaAlly(mana - 1))
+			//
+			dispatch(setManaAlly(mana - 1));
 
 			// Removes the currently selected card from the queue
 			dispatch(setCardReserveSelected(-1));
@@ -112,7 +114,7 @@ const Ally: React.FC<Props> = () => {
 				setAnimation(true);
 			}, 300);
 		}
-	}
+	};
 
 	return (
 		<>
@@ -138,7 +140,7 @@ const Ally: React.FC<Props> = () => {
 									}
 								} else {
 									// Go to battle
-									onGotoBattle(index)
+									onGotoBattle(index);
 								}
 							}
 						}}

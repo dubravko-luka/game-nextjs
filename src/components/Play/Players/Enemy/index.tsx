@@ -27,7 +27,7 @@ const Enemy: React.FC<Props> = () => {
 
 	const defense = (item: any) => {
 		dispatch(setCardDefense(item));
-		dispatch(setIsAttack(true))
+		dispatch(setIsAttack(true));
 		const message = jsonToWebsocket({
 			type: PLAY_ENUM_SOCKET.ATTACK,
 			card_defense: card_attack,

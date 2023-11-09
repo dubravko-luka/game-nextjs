@@ -59,7 +59,7 @@ const enemyReducer = (state = initialState, action: EnemyAction): EnemyState => 
 				card_3: cardDefault[0],
 				card_4: cardDefault[0],
 				card_main: cardMainDefault[0],
-				mana: 1
+				mana: 1,
 			};
 		default:
 			return state;

@@ -48,11 +48,11 @@ export const resetEnemy = () => {
 	return {
 		type: RESET_ENEMY,
 	};
-}
+};
 
 export const setManaEnemy = (mana: number) => {
 	return {
 		type: SET_MANA_ENEMY,
-		payload: mana
+		payload: mana,
 	};
-}
+};

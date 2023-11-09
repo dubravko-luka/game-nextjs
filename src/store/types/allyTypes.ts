@@ -25,7 +25,7 @@ export interface AllyState {
 
 	card_reserve_target: number;
 	card_reserve: ICardPlaying[];
-	mana: number
+	mana: number;
 }
 
 interface setCardOneAction {

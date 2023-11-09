@@ -61,6 +61,6 @@ export const setReady = (ready: boolean[]) => {
 
 export const resetAttackDefense = () => {
 	return {
-		type: RESET_ATTACK_DEFENSE
-	}
-}
+		type: RESET_ATTACK_DEFENSE,
+	};
+};
