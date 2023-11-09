@@ -10,6 +10,8 @@ export const SET_ALLY_CARD_TARGET_SELECTED = 'SET_ALLY_CARD_TARGET_SELECTED';
 export const SET_ALLY_CARD_RESERVE_SELECTED = 'SET_ALLY_CARD_RESERVE_SELECTED';
 export const SET_ALLY_CARD_RESERVE_TARGET_SELECTED = 'SET_ALLY_CARD_RESERVE_TARGET_SELECTED';
 export const SET_ALLY_CARD_RESERVE = 'SET_ALLY_CARD_RESERVE';
+export const RESET_ALLY = 'RESET_ALLY';
+export const SET_MANA_ALLY = 'SET_MANA_ALLY';
 
 export interface AllyState {
 	card_1: ICardPlaying;
@@ -23,6 +25,7 @@ export interface AllyState {
 
 	card_reserve_target: number;
 	card_reserve: ICardPlaying[];
+	mana: number
 }
 
 interface setCardOneAction {
@@ -75,6 +78,15 @@ interface setCardReserveAction {
 	payload: ICardPlaying[];
 }
 
+interface setManaAction {
+	type: typeof SET_MANA_ALLY;
+	payload: number;
+}
+
+interface resetAlly {
+	type: typeof RESET_ALLY;
+}
+
 export type AllyAction =
 	| setCardOneAction
 	| setCardTwoAction
@@ -85,4 +97,6 @@ export type AllyAction =
 	| setCardTargetSelectedAction
 	| setCardReserveSelectedAction
 	| setCardReserveTargetSelectedAction
-	| setCardReserveAction;
+	| setCardReserveAction
+	| resetAlly
+	| setManaAction;

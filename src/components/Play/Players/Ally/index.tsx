@@ -1,22 +1,25 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
 import Position from '../../Position';
-import { PLAYER_ENUM } from '@/types/enum';
+import { PLAYER_ENUM, PLAY_ENUM_SOCKET } from '@/types/enum';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/types';
 import {
 	setCardFour,
+	setCardMain,
 	setCardOne,
 	setCardReserve,
 	setCardReserveSelected,
 	setCardThree,
 	setCardTwo,
+	setManaAlly,
 } from '@/store/actions/allyAction';
 import Image from '@/components/Image';
 import { setCardAttack, setTurnEnemy, setYourTurn } from '@/store/actions/attackDefenseAction';
 import { cardDefault } from '@/types';
 import { jsonToWebsocket } from '@/utils/websocket';
-import { useWebSocket } from '@/hooks/useWebSocketPlay';
+import { useWebSocket } from '@/hooks/useWebSocket';
+import { setManaEnemy } from '@/store/actions/enemyAction';
 
 type Props = {
 	//
@@ -29,16 +32,16 @@ const positionPlayer = [
 	},
 ];
 
-const actionStore = [setCardOne, setCardTwo, setCardThree, setCardFour];
+const actionStore = [setCardOne, setCardTwo, setCardMain, setCardThree, setCardFour];
 
 const Ally: React.FC<Props> = () => {
-	const { sendMessage } = useWebSocket();
-	const { card_1, card_2, card_3, card_4, card_main, card_reserve, card_reserve_selected } = useSelector(
-		(state: RootState) => state?.ally,
-	);
+	const { sendMessage } = useWebSocket()
+	const dispatch = useDispatch();
+
+	const { card_1, card_2, card_3, card_4, card_main, card_reserve, card_reserve_selected, mana } = useSelector((state: RootState) => state?.ally);
+	const { mana: manaEnemy } = useSelector((state: RootState) => state?.enemy);
 	const { turnYour, turnEnemy } = useSelector((state: RootState) => state?.attackDefense);
 	const { card_attack } = useSelector((state: RootState) => state?.attackDefense);
-	const dispatch = useDispatch();
 
 	// ------------
 	const refCardReserve: any = useRef();
@@ -63,15 +66,53 @@ const Ally: React.FC<Props> = () => {
 	}, [refCardReserve]);
 
 	const endTurn = () => {
+		// END TURN
 		const message = jsonToWebsocket({
-			turn: 'reverse-turn',
-			yourTurn: turnYour ? true : false,
-			enemyTurn: turnEnemy ? true : false,
+			type: PLAY_ENUM_SOCKET.END_TURN,
+			yourMana: manaEnemy,
+			enemyMana: mana
 		});
-		dispatch(setYourTurn(false));
-		dispatch(setTurnEnemy(true));
 		sendMessage(message);
+
+		dispatch(setYourTurn(!turnYour));
+		dispatch(setTurnEnemy(!turnEnemy));
+		dispatch(setManaEnemy(manaEnemy + 1))
 	};
+
+	const onGotoBattle = (index: number) => {
+		// SET CARD TO BATTLE
+		if (card_reserve_selected !== -1 && mana !== 0) {
+			setAnimation(false);
+			dispatch(actionStore[index](card_reserve[card_reserve_selected]));
+
+			let cards: any = { card_1, card_2, card_main, card_3, card_4 }
+			let cards_name: any = ['card_1', 'card_2', 'card_main', 'card_3', 'card_4']
+			cards[cards_name[index]] = card_reserve[card_reserve_selected]
+
+			const message = jsonToWebsocket({
+				type: PLAY_ENUM_SOCKET.GO_TO_BATTLE,
+				...cards,
+				yourMana: manaEnemy,
+				enemyMana: mana - 1
+			});
+			sendMessage(message);
+
+			// 
+			dispatch(setManaAlly(mana - 1))
+
+			// Removes the currently selected card from the queue
+			dispatch(setCardReserveSelected(-1));
+
+			// Remove the posted card from the queue
+			dispatch(setCardReserve(card_reserve.filter((_, index) => index !== card_reserve_selected)));
+
+			// Animation
+			const timeOut = setTimeout(() => {
+				clearTimeout(timeOut);
+				setAnimation(true);
+			}, 300);
+		}
+	}
 
 	return (
 		<>
@@ -89,42 +130,15 @@ const Ally: React.FC<Props> = () => {
 						onClick={() => {
 							if (turnYour) {
 								if (item !== undefined && item?.id !== '') {
+									// Attack
 									if (card_attack?.id === item?.id) {
 										dispatch(setCardAttack(cardDefault[0]));
 									} else {
 										dispatch(setCardAttack(item));
 									}
 								} else {
-									if (index !== 2) {
-										setAnimation(false);
-										if (index > 2) {
-											dispatch(actionStore[index - 1](card_reserve[card_reserve_selected]));
-											const message = jsonToWebsocket({
-												turn: 'change-card',
-												card_1,
-												card_2,
-												card_3: index === 3 ? card_reserve[card_reserve_selected] : card_3,
-												card_4: index === 4 ? card_reserve[card_reserve_selected] : card_4,
-											});
-											sendMessage(message);
-										} else {
-											dispatch(actionStore[index](card_reserve[card_reserve_selected]));
-											const message = jsonToWebsocket({
-												turn: 'change-card',
-												card_3,
-												card_4,
-												card_1: index === 0 ? card_reserve[card_reserve_selected] : card_1,
-												card_2: index === 1 ? card_reserve[card_reserve_selected] : card_2,
-											});
-											sendMessage(message);
-										}
-										dispatch(setCardReserveSelected(-1));
-										dispatch(setCardReserve(card_reserve.filter((_, index) => index !== card_reserve_selected)));
-										const timeOut = setTimeout(() => {
-											clearTimeout(timeOut);
-											setAnimation(true);
-										}, 300);
-									}
+									// Go to battle
+									onGotoBattle(index)
 								}
 							}
 						}}
@@ -168,7 +182,7 @@ const Ally: React.FC<Props> = () => {
 
 			{/* Mana */}
 			<div className={`${styles.manaWrap}`}>
-				<p className={`${styles.textMana}`}>1/10</p>
+				<p className={`${styles.textMana}`}>{mana}/10</p>
 			</div>
 		</>
 	);

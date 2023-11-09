@@ -10,6 +10,7 @@ export enum SCREEN_ENUM {
 	ACTIVITY = 'ACTIVITY',
 	DAILY_TASK = 'DAILY_TASK',
 	MAILBOX = 'MAILBOX',
+	PLAY_PVP = 'PLAY_PVP'
 }
 
 export enum MODE_GAME {
@@ -53,6 +54,7 @@ export enum ICON_1_ENUM {
 	LETTER = `[0, 6]`,
 	LETTER_OPENED = `[1, 6]`,
 	LETTER_NOT_OPEN = `[2, 6]`,
+	SEARCH = `[3, 6]`,
 }
 
 export enum ICON_2_ENUM {
@@ -108,4 +110,15 @@ export enum position_card {
 export enum CARD_TYPE {
 	HERO = 'HERO',
 	CARD = 'CARD',
+}
+
+
+export enum PLAY_ENUM_SOCKET {
+	START = "START",
+	CREATE = "CREATE",
+	JOIN = "JOIN",
+	END_TURN = 'END_TURN',
+	GO_TO_BATTLE = 'GO_TO_BATTLE',
+	ATTACK = 'ATTACK',
+	CLOSE = 'CLOSE'
 }

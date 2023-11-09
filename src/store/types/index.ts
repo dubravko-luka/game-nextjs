@@ -8,6 +8,7 @@ import { MailboxState } from './mailboxTypes';
 import { ScreenState } from './screenTypes';
 import { SettingState } from './settingTypes';
 import { ShopState } from './shopTypes';
+import { WebSocketState } from './webSocketTypes';
 import { WindowState } from './windowTypes';
 
 export interface RootState {
@@ -22,4 +23,5 @@ export interface RootState {
 	ally: AllyState;
 	enemy: EnemyState;
 	attackDefense: AttackDefenseState;
+	webSocket: WebSocketState;
 }

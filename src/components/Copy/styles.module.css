@@ -1,0 +1,35 @@
+.copied {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 20px);
+  transform: translateX(-50%);
+  background: #fff;
+  color: #000;
+  width: 121px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 24px;
+  font-weight: 400;
+  opacity: 0;
+  transition: all .3s linear;
+}
+
+.copied.active {
+  opacity: 1;
+}
+
+.copied::before {
+  content: '';
+  position: absolute;
+  border-left: 10px solid #fff0;
+  border-right: 10px solid #fff0;
+  border-bottom: 10px solid #fff;
+  width: 0;
+  height: 0;
+  bottom: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+}

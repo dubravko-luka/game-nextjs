@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
 import styles from './styles.module.css';
 import Position from '../../Position';
-import { PLAYER_ENUM } from '@/types/enum';
+import { PLAYER_ENUM, PLAY_ENUM_SOCKET } from '@/types/enum';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/types';
 import Image from '@/components/Image';
-import { setCardDefense } from '@/store/actions/attackDefenseAction';
+import { setCardDefense, setIsAttack } from '@/store/actions/attackDefenseAction';
 import { jsonToWebsocket } from '@/utils/websocket';
-import { useWebSocket } from '@/hooks/useWebSocketPlay';
+import { useWebSocket } from '@/hooks/useWebSocket';
 
 type Props = {};
 
@@ -19,7 +19,7 @@ const positionPlayer = [
 ];
 
 const Enemy: React.FC<Props> = () => {
-	const { card_1, card_2, card_3, card_4, card_main } = useSelector((state: RootState) => state?.enemy);
+	const { card_1, card_2, card_3, card_4, card_main, mana } = useSelector((state: RootState) => state?.enemy);
 	const { card_attack, card_defense } = useSelector((state: RootState) => state?.attackDefense);
 
 	const dispatch = useDispatch();
@@ -27,7 +27,9 @@ const Enemy: React.FC<Props> = () => {
 
 	const defense = (item: any) => {
 		dispatch(setCardDefense(item));
+		dispatch(setIsAttack(true))
 		const message = jsonToWebsocket({
+			type: PLAY_ENUM_SOCKET.ATTACK,
 			card_defense: card_attack,
 			card_attack: item,
 		});
@@ -74,7 +76,7 @@ const Enemy: React.FC<Props> = () => {
 
 			{/* Mana */}
 			<div className={`${styles.manaWrap}`}>
-				<p className={`${styles.textMana}`}>1/10</p>
+				<p className={`${styles.textMana}`}>{mana}/10</p>
 			</div>
 		</>
 	);

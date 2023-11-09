@@ -8,6 +8,7 @@ import {
 	SET_TURN_YOUR,
 	SET_TURN_ENEMY,
 	SET_READY,
+	RESET_ATTACK_DEFENSE,
 } from '../types/attackDefenseTypes';
 import { cardDefault } from '@/types';
 
@@ -57,6 +58,16 @@ const attackDefenseReducer = (state = initialState, action: AttackDefenseAction)
 			return {
 				...state,
 				ready: action?.payload,
+			};
+		case RESET_ATTACK_DEFENSE:
+			return {
+				card_attack: cardDefault[0],
+				card_defense: cardDefault[0],
+				isAttack: true,
+				delaySkill: 70,
+				turnYour: false,
+				turnEnemy: false,
+				ready: [],
 			};
 		default:
 			return state;

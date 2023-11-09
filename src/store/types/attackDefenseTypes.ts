@@ -7,6 +7,7 @@ export const SET_DELAY_SKILL = 'SET_DELAY_SKILL';
 export const SET_TURN_YOUR = 'SET_TURN_YOUR';
 export const SET_TURN_ENEMY = 'SET_TURN_ENEMY';
 export const SET_READY = 'SET_READY';
+export const RESET_ATTACK_DEFENSE = 'RESET_ATTACK_DEFENSE';
 
 export interface AttackDefenseState {
 	card_attack: ICardPlaying;
@@ -53,6 +54,10 @@ interface setReadyAction {
 	payload: boolean[];
 }
 
+interface resetAttackDefense {
+	type: typeof RESET_ATTACK_DEFENSE;
+}
+
 export type AttackDefenseAction =
 	| setCardAttackAction
 	| setCardDefenseAction
@@ -60,4 +65,5 @@ export type AttackDefenseAction =
 	| setDelaySkillAction
 	| setTurnYourAction
 	| setTurnEnemyAction
-	| setReadyAction;
+	| setReadyAction
+	| resetAttackDefense;

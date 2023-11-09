@@ -2,6 +2,7 @@ import { CARD_TYPE } from '@/types/enum';
 import {
 	AllyAction,
 	AllyState,
+	RESET_ALLY,
 	SET_ALLY_CARD_1,
 	SET_ALLY_CARD_2,
 	SET_ALLY_CARD_3,
@@ -12,6 +13,7 @@ import {
 	SET_ALLY_CARD_RESERVE_SELECTED,
 	SET_ALLY_CARD_RESERVE_TARGET_SELECTED,
 	SET_ALLY_CARD_TARGET_SELECTED,
+	SET_MANA_ALLY,
 } from '../types/allyTypes';
 import { cardDefault, cardMainDefault } from '@/types';
 
@@ -46,7 +48,18 @@ const initialState: AllyState = {
 			src: '/images/cards/monster/firefos.png',
 			type: CARD_TYPE.CARD,
 		},
+		{
+			id: '5',
+			src: '/images/cards/human/radman.png',
+			type: CARD_TYPE.CARD,
+		},
+		{
+			id: '6',
+			src: '/images/cards/fairy/alma.png',
+			type: CARD_TYPE.CARD,
+		},
 	],
+	mana: 1,
 };
 
 const allyReducer = (state = initialState, action: AllyAction): AllyState => {
@@ -100,6 +113,56 @@ const allyReducer = (state = initialState, action: AllyAction): AllyState => {
 			return {
 				...state,
 				card_reserve: action?.payload,
+			};
+		case SET_MANA_ALLY:
+			return {
+				...state,
+				mana: action?.payload,
+			};
+		case RESET_ALLY:
+			return {
+				card_1: cardDefault[0],
+				card_2: cardDefault[0],
+				card_3: cardDefault[0],
+				card_4: cardDefault[0],
+				card_main: cardMainDefault[0],
+				card_selected: -1,
+				card_target_selected: -1,
+				card_reserve_selected: -1,
+				card_reserve_target: -1,
+				card_reserve: [
+					{
+						id: '1',
+						src: '/images/cards/beatman/butterman.png',
+						type: CARD_TYPE.CARD,
+					},
+					{
+						id: '2',
+						src: '/images/cards/fairy/cael.png',
+						type: CARD_TYPE.CARD,
+					},
+					{
+						id: '3',
+						src: '/images/cards/fairy/calixto.png',
+						type: CARD_TYPE.CARD,
+					},
+					{
+						id: '4',
+						src: '/images/cards/monster/firefos.png',
+						type: CARD_TYPE.CARD,
+					},
+					{
+						id: '5',
+						src: '/images/cards/human/radman.png',
+						type: CARD_TYPE.CARD,
+					},
+					{
+						id: '6',
+						src: '/images/cards/fairy/alma.png',
+						type: CARD_TYPE.CARD,
+					},
+				],
+				mana: 1,
 			};
 		default:
 			return state;

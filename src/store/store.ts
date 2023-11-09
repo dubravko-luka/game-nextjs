@@ -11,6 +11,7 @@ import settingReducer from './reducers/settingReducer';
 import allyReducer from './reducers/allyReducer';
 import enemyReducer from './reducers/enemyReducer';
 import attackDefenseReducer from './reducers/attackDefenseReducer';
+import webSocketReducer from './reducers/webSocketReducer';
 
 const rootReducer = combineReducers({
 	window: windowReducer,
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
 	ally: allyReducer,
 	enemy: enemyReducer,
 	attackDefense: attackDefenseReducer,
+	webSocket: webSocketReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

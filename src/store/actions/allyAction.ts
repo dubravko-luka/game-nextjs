@@ -1,5 +1,6 @@
 import { ICardMainPlaying, ICardPlaying } from '@/types/interfaces';
 import {
+	RESET_ALLY,
 	SET_ALLY_CARD_1,
 	SET_ALLY_CARD_2,
 	SET_ALLY_CARD_3,
@@ -10,6 +11,7 @@ import {
 	SET_ALLY_CARD_RESERVE_SELECTED,
 	SET_ALLY_CARD_RESERVE_TARGET_SELECTED,
 	SET_ALLY_CARD_TARGET_SELECTED,
+	SET_MANA_ALLY,
 } from '../types/allyTypes';
 
 export const setCardOne = (card: ICardPlaying) => {
@@ -81,3 +83,17 @@ export const setCardReserve = (card: ICardPlaying[]) => {
 		payload: card,
 	};
 };
+
+
+export const resetAlly = () => {
+	return {
+		type: RESET_ALLY,
+	};
+}
+
+export const setManaAlly = (mana: number) => {
+	return {
+		type: SET_MANA_ALLY,
+		payload: mana
+	};
+}

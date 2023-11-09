@@ -5,6 +5,8 @@ export const SET_ENEMY_CARD_2 = 'SET_ENEMY_CARD_2';
 export const SET_ENEMY_CARD_3 = 'SET_ENEMY_CARD_3';
 export const SET_ENEMY_CARD_4 = 'SET_ENEMY_CARD_4';
 export const SET_ENEMY_CARD_MAIN = 'SET_ENEMY_CARD_MAIN';
+export const RESET_ENEMY = 'RESET_ENEMY';
+export const SET_MANA_ENEMY = 'SET_MANA_ENEMY';
 
 export interface EnemyState {
 	card_1: ICardPlaying;
@@ -12,6 +14,7 @@ export interface EnemyState {
 	card_3: ICardPlaying;
 	card_4: ICardPlaying;
 	card_main: ICardMainPlaying;
+	mana: number;
 }
 
 interface setCardOneAction {
@@ -39,9 +42,20 @@ interface setCardMainAction {
 	payload: ICardMainPlaying;
 }
 
+interface setManaAction {
+	type: typeof SET_MANA_ENEMY;
+	payload: number;
+}
+
+interface resetEnemy {
+	type: typeof RESET_ENEMY;
+}
+
 export type EnemyAction =
 	| setCardOneAction
 	| setCardTwoAction
 	| setCardThreeAction
 	| setCardFourAction
-	| setCardMainAction;
+	| setCardMainAction
+	| resetEnemy
+	| setManaAction;

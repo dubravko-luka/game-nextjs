@@ -7,6 +7,7 @@ import {
 	SET_TURN_YOUR,
 	SET_TURN_ENEMY,
 	SET_READY,
+	RESET_ATTACK_DEFENSE,
 } from '../types/attackDefenseTypes';
 
 export const setCardAttack = (card: ICardPlaying) => {
@@ -57,3 +58,9 @@ export const setReady = (ready: boolean[]) => {
 		payload: ready,
 	};
 };
+
+export const resetAttackDefense = () => {
+	return {
+		type: RESET_ATTACK_DEFENSE
+	}
+}

@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import styles from './styles.module.css';
 import SettingPlayGame from './Setting';
 import Ally from './Ally';
@@ -8,44 +8,17 @@ import InfoEnemy from './Enemy/Info';
 import Action from './Action';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/types';
-import { useWebSocket, useWebSocketInit } from '@/hooks/useWebSocketPlay';
-import { jsonToWebsocket } from '@/utils/websocket';
+import { useWebSocket } from '@/hooks/useWebSocketPlay';
 
 type Props = {
 	//
 };
 
 const Players: React.FC<Props> = () => {
-	const { card_attack, card_defense, ready } = useSelector((state: RootState) => state?.attackDefense);
-	const [showReady, setShowReady] = useState(true);
-
-	useWebSocketInit();
-	const { sendMessage } = useWebSocket();
+	const { card_attack, card_defense } = useSelector((state: RootState) => state?.attackDefense);
 
 	return (
 		<>
-			{ready.length < 2 || ready[0] === false || ready[1] === false ? (
-				<div className={`${styles.play}`}>
-					{showReady ? (
-						<button
-							className={styles.btnPlay}
-							onClick={() => {
-								const message = jsonToWebsocket({
-									turn: 'check-turn',
-								});
-								sendMessage(message);
-								setShowReady(false);
-							}}
-						>
-							READY
-						</button>
-					) : (
-						<></>
-					)}
-				</div>
-			) : (
-				<></>
-			)}
 			<div className={`${styles.main} play-game`}>
 				<div className={`${styles.wrapper}`}>
 					<div className={`${styles.info} info-play`}>

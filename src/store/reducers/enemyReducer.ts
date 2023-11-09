@@ -1,11 +1,13 @@
 import {
 	EnemyAction,
 	EnemyState,
+	RESET_ENEMY,
 	SET_ENEMY_CARD_1,
 	SET_ENEMY_CARD_2,
 	SET_ENEMY_CARD_3,
 	SET_ENEMY_CARD_4,
 	SET_ENEMY_CARD_MAIN,
+	SET_MANA_ENEMY,
 } from '../types/enemyTypes';
 import { cardDefault, cardMainDefault } from '@/types';
 
@@ -15,6 +17,7 @@ const initialState: EnemyState = {
 	card_3: cardDefault[0],
 	card_4: cardDefault[0],
 	card_main: cardMainDefault[0],
+	mana: 1,
 };
 
 const enemyReducer = (state = initialState, action: EnemyAction): EnemyState => {
@@ -43,6 +46,20 @@ const enemyReducer = (state = initialState, action: EnemyAction): EnemyState => 
 			return {
 				...state,
 				card_main: action?.payload,
+			};
+		case SET_MANA_ENEMY:
+			return {
+				...state,
+				mana: action?.payload,
+			};
+		case RESET_ENEMY:
+			return {
+				card_1: cardDefault[0],
+				card_2: cardDefault[0],
+				card_3: cardDefault[0],
+				card_4: cardDefault[0],
+				card_main: cardMainDefault[0],
+				mana: 1
 			};
 		default:
 			return state;

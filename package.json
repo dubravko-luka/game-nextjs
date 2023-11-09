@@ -31,6 +31,7 @@
     "@types/react-scroll": "^1.8.6",
     "@types/react-svg": "^5.0.0",
     "babel-plugin-import": "^1.13.6",
+    "copy-to-clipboard": "^3.3.3",
     "cross-env": "^7.0.3",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
