@@ -14,7 +14,7 @@ export function usePlayWebSocket() {
 
 	const initSocket = async (room: number | string, type?: string, user?: string | number) => {
 		const client = new W3CWebSocket(
-			`${process.env.NEXT_PUBLIC_SOCKET_URL}?path=play&room=${12354}&user=${user}`,
+			`ws://supernova-api.demo-website.click:8083?path=play&room=${12354}&user=${user}`,
 			'echo-protocol',
 		);
 		dispatch(setClient(client));
