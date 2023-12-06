@@ -14,7 +14,7 @@ export function usePlayWebSocket() {
 
 	const initSocket = async (room: number | string, type?: string, user?: string | number) => {
 		const client = new W3CWebSocket(
-			`${process.env.NEXT_PUBLIC_URL_WSS}?path=play&room=${12354}&user=${user}`,
+			`${process.env.NEXT_PUBLIC_URL_WS}?path=play&room=${12354}&user=${user}`,
 			'echo-protocol',
 		);
 		dispatch(setClient(client));
