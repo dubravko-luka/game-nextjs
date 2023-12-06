@@ -3,8 +3,8 @@
 module.exports = {
 	rewrites: [
 		// {
-		// 	source: `/socket`,
-		// 	destination: NEXT_PUBLIC_SERVER_API,
+		// 	source: `/socket/:path*`,
+		// 	destination: `${NEXT_PUBLIC_SERVER_API}/:path*`,
 		// },
 	],
 };

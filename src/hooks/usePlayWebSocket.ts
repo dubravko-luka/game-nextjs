@@ -13,7 +13,10 @@ export function usePlayWebSocket() {
 	const { handlMessagePlaySocket } = useMessagePlaySocket();
 
 	const initSocket = async (room: number | string, type?: string, user?: string | number) => {
-		const client = new W3CWebSocket(`ws://103.57.223.208:8083?path=play&room=${12354}&user=${user}`, 'echo-protocol');
+		const client = new W3CWebSocket(
+			`${process.env.NEXT_PUBLIC_URL_WS}?path=play&room=${12354}&user=${user}`,
+			'echo-protocol',
+		);
 		dispatch(setClient(client));
 
 		client.onerror = function () {
