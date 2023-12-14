@@ -18,7 +18,6 @@ export function usePlayWebSocket() {
 			'echo-protocol',
 		);
 		dispatch(setClient(client));
-
 		client.onerror = function () {
 			console.log('Connection Error');
 		};
