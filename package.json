@@ -10,8 +10,9 @@
     "node": ">=10.13"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "rm -rf .env && cp .env.dev .env && next dev",
+    "build": "yarn build-prod && next build",
+    "build-prod": "rm -rf .env && cp .env.prod .env",
     "start": "next start",
     "format": "prettier --write --ignore-unknown '**/*.{js,jsx,ts,tsx,md,mdx,svg}'",
     "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",

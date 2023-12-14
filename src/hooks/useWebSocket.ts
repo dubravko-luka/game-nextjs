@@ -16,8 +16,13 @@ export function useWebSocket() {
 		}
 	};
 
+	const surrender = async () => {
+		client.close();
+	};
+
 	return {
 		sendMessage,
+		surrender,
 		sendMessageWidthClient,
 	};
 }

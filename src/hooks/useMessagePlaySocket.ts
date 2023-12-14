@@ -29,13 +29,15 @@ export function useMessagePlaySocket() {
 	const { turnYour, turnEnemy } = useSelector((state: RootState) => state?.attackDefense);
 
 	const handleGotoBattle = (res: any) => {
-		dispatch(setCardOne(res.card_1));
-		dispatch(setCardTwo(res.card_2));
-		dispatch(setCardThree(res.card_3));
-		dispatch(setCardFour(res.card_4));
-		dispatch(setCardMain(res.card_main));
-		dispatch(setManaAlly(res.yourMana));
-		dispatch(setManaEnemy(res.enemyMana));
+		if (!turnYour) {
+			dispatch(setCardOne(res.card_1));
+			dispatch(setCardTwo(res.card_2));
+			dispatch(setCardThree(res.card_3));
+			dispatch(setCardFour(res.card_4));
+			dispatch(setCardMainEnemy(res.card_main));
+			dispatch(setManaAlly(res.yourMana));
+			dispatch(setManaEnemy(res.enemyMana));
+		}
 	};
 
 	const handleEndTurn = (res: any) => {

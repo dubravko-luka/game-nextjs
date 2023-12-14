@@ -6,6 +6,7 @@ import React, { memo, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './styles.module.css';
 import { VERSION } from '@/constants/load-image-data-version';
+import _ from 'lodash';
 
 type Props = {
 	setLoaded: any;
@@ -18,67 +19,79 @@ const LoadData: React.FC<Props> = ({ setLoaded }) => {
 	const dispatch = useDispatch();
 
 	const handleSaveImageToDB = async () => {
-		clearAllDataImage();
+		const ver = localStorage.getItem(key_localstorage_image);
+		if (ver !== VERSION) {
+			clearAllDataImage();
+		}
+
+		localStorage.setItem(key_localstorage_image, VERSION);
+
 		const imageList = imagesList;
 
 		const totalImages = imageList.length;
 		let loadedImages = 0;
 
-		const images: IIndexedDbImage[] = [];
+		const images: IIndexedDbImage[] = await getFullImage();
 
 		await openDB()
 			.then((db) => {
 				const loadImages = async () => {
 					for (let index = 0; index < imageList.length; index++) {
-						const imageUrl = imageList[index];
-						const response = await fetch(imageUrl);
-						if (response.ok) {
-							const blob = await response.blob();
-							const base64Image: any = await new Promise((resolve) => {
-								const reader = new FileReader();
-								reader.onload = () => resolve(reader.result);
-								reader.readAsDataURL(blob);
-							});
+						const base64 = _.find(images, { key: imageList[index] })?.base64Image;
+						if (base64 !== '') {
+							dispatch(setImages(images));
+						}
+						if (base64 === '') {
+							const imageUrl = imageList[index];
+							const response = await fetch(imageUrl);
+							if (response.ok) {
+								const blob = await response.blob();
+								const base64Image: any = await new Promise((resolve) => {
+									const reader = new FileReader();
+									reader.onload = () => resolve(reader.result);
+									reader.readAsDataURL(blob);
+								});
 
-							await saveImageToDB(db, { id: imageListName[index], base64Image });
-							images.push({
-								key: imageListName[index].toString(),
-								base64Image: base64Image.toString(),
-							});
+								await saveImageToDB(db, { id: imageListName[index], base64Image });
+								images[index] = {
+									key: imageListName[index].toString(),
+									base64Image: base64Image.toString(),
+								};
 
+								dispatch(setImages(images));
+
+								loadedImages++;
+								setProgress((loadedImages / totalImages) * 100);
+							}
+						} else {
 							loadedImages++;
 							setProgress((loadedImages / totalImages) * 100);
 						}
-					}
-					if (images.length === imageListName.length) {
-						dispatch(setImages(images));
-						localStorage.setItem(key_localstorage_image, VERSION);
-						setLoaded(true);
+
+						if (loadedImages === imageListName.length) {
+							dispatch(setImages(images));
+							localStorage.setItem(key_localstorage_image, VERSION);
+							setLoaded(true);
+						}
 					}
 				};
 
 				loadImages();
 			})
 			.catch((error) => {
-				// console.log(error);
+				console.log(error);
 			});
 	};
 
-	const handleGetAllImage = async () => {
-		const images: IIndexedDbImage[] = await getFullImage();
-		dispatch(setImages(images));
-		localStorage.setItem(key_localstorage_image, VERSION);
-		setLoaded(true);
-	};
+	// const handleGetAllImage = async () => {
+	// 	const images: IIndexedDbImage[] = await getFullImage();
+	// 	dispatch(setImages(images));
+	// 	localStorage.setItem(key_localstorage_image, VERSION);
+	// 	setLoaded(true);
+	// };
 
 	const handleImageLoad = async () => {
-		const ver = localStorage.getItem(key_localstorage_image);
-		if (ver !== VERSION) {
-			handleSaveImageToDB();
-		} else {
-			setProgress(100);
-			handleGetAllImage();
-		}
+		handleSaveImageToDB();
 	};
 
 	useEffect(() => {

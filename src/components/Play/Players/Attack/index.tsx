@@ -8,11 +8,13 @@ import { cardDefault } from '@/types';
 
 type PropsSkill = {
 	src: string;
+	dame?: number;
 	width?: number;
 	height?: number;
 	columns?: number;
 	rows?: number;
 	_scale?: number;
+	doneAction?: any;
 };
 
 const frameDelay = 70;
@@ -76,7 +78,16 @@ const Skill: React.FC<PropsSkill> = ({ src, width = 221, height = 285, columns =
 	);
 };
 
-const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, columns = 8, rows = 2, _scale = 1 }) => {
+const SkillDefense: React.FC<PropsSkill> = ({
+	src,
+	width = 221,
+	height = 285,
+	columns = 8,
+	rows = 2,
+	_scale = 1,
+	dame = 0,
+	doneAction,
+}) => {
 	const [showMinus, setShowMinus] = useState(false);
 	const dispatch = useDispatch();
 
@@ -97,6 +108,7 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
 			dispatch(setCardDefense(cardDefault[0]));
 			dispatch(setIsAttack(true));
 			clearTimeout(timeOut);
+			doneAction();
 
 			// eslint-disable-next-line
 		}, columns * frameDelay + 1200);
@@ -149,7 +161,7 @@ const SkillDefense: React.FC<PropsSkill> = ({ src, width = 221, height = 285, co
 			>
 				{showMinus ? (
 					<div className={`${styles.minus}`}>
-						<p className={`${styles._minus}`}>-5</p>
+						<p className={`${styles._minus}`}>-{dame}</p>
 					</div>
 				) : (
 					<Skill src={src} width={width} height={height} columns={columns} rows={rows} _scale={_scale} />
@@ -179,9 +191,11 @@ const SkillAttack: React.FC<PropsSkill> = ({ src, width = 221, height = 285, col
 
 interface IAttack {
 	src: string;
+	card?: any;
 	defenseDelay?: number;
 	rows: number;
 	columns: number;
+	doneAction: () => void;
 }
 
 type PropsAttack = {
@@ -193,7 +207,13 @@ const Attack: React.FC<PropsAttack> = ({ attack, defense }) => {
 	return (
 		<>
 			<SkillAttack src={attack.src} rows={attack.rows} columns={attack.columns} _scale={0.5} />
-			<SkillDefense src={defense.src} rows={defense.rows} columns={defense.columns} />
+			<SkillDefense
+				doneAction={defense.doneAction}
+				dame={attack?.card?.dame}
+				src={defense.src}
+				rows={defense.rows}
+				columns={defense.columns}
+			/>
 		</>
 	);
 };
