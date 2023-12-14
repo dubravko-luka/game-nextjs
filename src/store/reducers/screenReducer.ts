@@ -2,7 +2,7 @@ import { SCREEN_ENUM } from '@/types/enum';
 import { SET_SCREEN, ScreenAction, ScreenState } from '../types/screenTypes';
 
 const initialState: ScreenState = {
-	screen: SCREEN_ENUM.HOME,
+	screen: SCREEN_ENUM.PVP,
 };
 
 const screenReducer = (state = initialState, action: ScreenAction): ScreenState => {

@@ -47,6 +47,7 @@ const Ally: React.FC<Props> = () => {
 
 	// ------------
 	const refCardReserve: any = useRef();
+
 	const [animaion, setAnimation] = useState(true);
 
 	const resetCardReserveSelected = () => {
@@ -140,6 +141,7 @@ const Ally: React.FC<Props> = () => {
 									}
 								} else {
 									// Go to battle
+									dispatch(setCardAttack(cardDefault[0]));
 									onGotoBattle(index);
 								}
 							}
@@ -161,7 +163,11 @@ const Ally: React.FC<Props> = () => {
 						key={index}
 						className={`${styles.cardReserveWrap} ${card_reserve_selected === index ? styles.selected : ''}`}
 						onClick={() => {
-							dispatch(setCardReserveSelected(index));
+							if (index === card_reserve_selected) {
+								resetCardReserveSelected();
+							} else {
+								dispatch(setCardReserveSelected(index));
+							}
 						}}
 					>
 						<Image option={{ className: styles.imageReserve }} name={item.src} />
